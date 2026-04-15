@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>轻流 MCP 能力清单</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #667085;
+      --line: #d9e2ec;
+      --brand: #0f766e;
+      --brand-soft: #e6f6f4;
+      --accent: #c2410c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #eef6f5 0%, var(--bg) 100%);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #0f766e 0%, #155e75 100%);
+      color: #fff;
+      padding: 28px 30px;
+      border-radius: 20px;
+      box-shadow: 0 18px 48px rgba(15, 118, 110, 0.18);
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+    .hero p {
+      margin: 0;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      font-size: 13px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px 22px 18px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+    }
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      color: var(--brand);
+    }
+    .card p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.8;
+    }
+    li + li { margin-top: 2px; }
+    .full {
+      grid-column: 1 / -1;
+    }
+    .note {
+      margin-top: 24px;
+      padding: 16px 18px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 16px;
+      color: #9a3412;
+      line-height: 1.7;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: var(--brand-soft);
+      color: #115e59;
+      border-radius: 6px;
+      padding: 1px 6px;
+    }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>轻流当前已支持的 MCP 能力清单</h1>
+      <p>
+        本页基于当前会话中可直接调用的 <code>qingflow</code> 与 <code>qingflow_builder</code> MCP 工具整理，
+        重点覆盖认证、工作区、应用、记录、任务、导入导出、流程、视图、图表、门户等能力。
+      </p>
+      <div class="meta">
+        <span class="tag">覆盖运行态 + Builder 能力</span>
+        <span class="tag">适合做能力盘点与内部说明</span>
+        <span class="tag">整理日期：2026-04-13</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>1. 认证与工作区</h2>
+        <p>支持登录态管理、Token 接入、身份确认与工作区切换。</p>
+        <ul>
+          <li>账号登录 / 退出：<code>auth_login</code>、<code>auth_logout</code></li>
+          <li>Token 接入：<code>auth_use_token</code></li>
+          <li>查看当前身份：<code>auth_whoami</code></li>
+          <li>列出工作区 / 切换工作区：<code>workspace_list</code>、<code>workspace_select</code></li>
+          <li>Builder 侧同样支持独立认证与工作区切换</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>2. 应用与门户读取</h2>
+        <p>支持读取业务应用、视图、图表、门户等配置与摘要信息。</p>
+        <ul>
+          <li>应用查询：<code>app_list</code>、<code>app_search</code>、<code>app_get</code></li>
+          <li>视图读取：<code>view_get</code>、Builder <code>app_get_views</code></li>
+          <li>图表读取：<code>chart_get</code>、Builder <code>app_get_charts</code></li>
+          <li>门户读取：<code>portal_list</code>、<code>portal_get</code></li>
+          <li>Builder 支持按名称或 key 解析应用：<code>app_resolve</code></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>3. 组织架构与人员目录</h2>
+        <p>支持部门、内部成员、外部联系人等目录信息读取与搜索。</p>
+        <ul>
+          <li>部门列表 / 子部门：<code>directory_list_internal_departments</code>、<code>directory_list_sub_departments</code></li>
+          <li>全量部门树：<code>directory_list_all_departments</code></li>
+          <li>内部成员列表：<code>directory_list_internal_users</code>、<code>directory_list_all_internal_users</code></li>
+          <li>外部联系人列表：<code>directory_list_external_members</code></li>
+          <li>统一目录搜索：<code>directory_search</code></li>
+          <li>Builder 侧成员搜索：<code>member_search</code></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>4. 记录读取与浏览</h2>
+        <p>支持 schema-first 方式读取单条记录、列表记录和浏览 schema。</p>
+        <ul>
+          <li>读取单条记录：<code>record_get</code></li>
+          <li>记录列表浏览：<code>record_list</code></li>
+          <li>浏览 schema：<code>record_browse_schema_get</code></li>
+          <li>插入 schema：<code>record_insert_schema_get</code></li>
+          <li>更新 schema：<code>record_update_schema_get</code></li>
+          <li>适合做字段探查、记录抽样、导出前确认</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>5. 记录新增、更新、删除</h2>
+        <p>支持在运行态对业务数据做标准 CRUD。</p>
+        <ul>
+          <li>新增记录：<code>record_insert</code></li>
+          <li>更新记录：<code>record_update</code></li>
+          <li>删除记录：<code>record_delete</code></li>
+          <li>支持写前预校验与写后验证</li>
+          <li>支持 relation / member / department 等字段的自然输入解析</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>6. 记录分析能力</h2>
+        <p>支持基于字段 schema 的分析型查询，适合做统计、分组、聚合。</p>
+        <ul>
+          <li>分析入口：<code>record_analyze</code></li>
+          <li>支持整表汇总、分组统计、排序、筛选</li>
+          <li>适合做数量、占比、排行、趋势类分析</li>
+          <li>属于“最终结论类”能力，不只是浏览明细</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>7. 导入与导出辅助</h2>
+        <p>支持模板获取、校验、修复、本地导入启动与状态跟踪。</p>
+        <ul>
+          <li>获取导入模板：<code>record_import_template_get</code></li>
+          <li>导入 schema：<code>record_import_schema_get</code></li>
+          <li>导入校验：<code>record_import_verify</code></li>
+          <li>本地修复导入文件：<code>record_import_repair_local</code></li>
+          <li>启动导入 / 查询状态：<code>record_import_start</code>、<code>record_import_status_get</code></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>8. 文件与附件</h2>
+        <p>支持获取上传信息、本地文件上传与附件字段配合使用。</p>
+        <ul>
+          <li>获取上传信息：<code>file_get_upload_info</code></li>
+          <li>运行态上传本地文件：<code>file_upload_local</code></li>
+          <li>Builder 侧上传本地文件：<code>builder.file_upload_local</code></li>
+          <li>适合图片、附件、导入模板等场景</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>9. 任务与流程运行态</h2>
+        <p>支持待办查询、任务上下文、流程日志、动作执行等运行态能力。</p>
+        <ul>
+          <li>任务列表 / 待办箱：<code>task_list</code></li>
+          <li>任务详情：<code>task_get</code></li>
+          <li>流程日志：<code>task_workflow_log_get</code></li>
+          <li>关联报表明细：<code>task_associated_report_detail_get</code></li>
+          <li>执行任务动作：<code>task_action_execute</code></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>10. 成员候选与字段候选集</h2>
+        <p>支持在 schema 基础上查出成员字段、部门字段的候选范围。</p>
+        <ul>
+          <li>成员候选：<code>record_member_candidates</code></li>
+          <li>部门候选：<code>record_department_candidates</code></li>
+          <li>适合做可选范围确认、自动填充前探查</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>11. 代码块与远程联动</h2>
+        <p>支持运行表单代码块、读取代码块 schema，并支持 Builder 配置代码块/QLinker。</p>
+        <ul>
+          <li>读取代码块 schema：<code>record_code_block_schema_get</code></li>
+          <li>运行代码块：<code>record_code_block_run</code></li>
+          <li>Builder 可配置 <code>code_block</code> 与 <code>q_linker</code> 字段</li>
+          <li>适合做计算字段、外部查询回填、复杂表单联动</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>12. Builder 建模能力</h2>
+        <p>支持在 Builder 侧直接创建和维护应用结构。</p>
+        <ul>
+          <li>应用创建 / 更新 schema：<code>app_schema_apply</code></li>
+          <li>表单布局调整：<code>app_layout_apply</code></li>
+          <li>流程配置：<code>app_flow_apply</code></li>
+          <li>视图配置：<code>app_views_apply</code></li>
+          <li>图表配置：<code>app_charts_apply</code></li>
+          <li>发布校验：<code>app_publish_verify</code></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>13. Builder 门户与解决方案</h2>
+        <p>支持门户、解决方案包、应用归档到包等能力。</p>
+        <ul>
+          <li>创建 / 更新门户：<code>portal_apply</code></li>
+          <li>读取门户：<code>builder.portal_get</code>、<code>builder.portal_list</code></li>
+          <li>包创建 / 查询：<code>package_create</code>、<code>package_list</code>、<code>package_resolve</code></li>
+          <li>应用挂到包：<code>package_attach_app</code></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>14. Builder 角色与发布辅助</h2>
+        <p>支持创建角色、搜索角色、编辑锁处理等 Builder 侧辅助操作。</p>
+        <ul>
+          <li>角色创建 / 搜索：<code>role_create</code>、<code>role_search</code></li>
+          <li>自定义按钮：<code>app_custom_button_create</code>、<code>app_custom_button_update</code> 等</li>
+          <li>发布锁释放：<code>app_release_edit_lock_if_mine</code></li>
+          <li>代码块修复：<code>app_repair_code_blocks</code></li>
+        </ul>
+      </article>
+
+      <article class="card full">
+        <h2>15. 当前可总结为 5 大类能力</h2>
+        <ul>
+          <li><strong>运行态数据能力</strong>：读、写、删、分析、导入、文件上传、任务执行。</li>
+          <li><strong>组织与权限支撑能力</strong>：成员目录、部门目录、成员候选、部门候选、角色管理。</li>
+          <li><strong>Builder 建模能力</strong>：应用 schema、布局、流程、视图、图表、门户、解决方案包。</li>
+          <li><strong>自动化扩展能力</strong>：代码块、QLinker、流程动作、图表/门户展示。</li>
+          <li><strong>实施辅助能力</strong>：反馈提交、导入修复、编辑锁释放、发布校验、包管理。</li>
+        </ul>
+      </article>
+    </section>
+
+    <div class="note">
+      说明：本清单按“当前会话里可直接调用的 MCP 工具”整理，因此是“当前已接入并可用的能力范围”，不是轻流所有潜在平台能力的完整白皮书。
+    </div>
+  </div>
+</body>
+</html>

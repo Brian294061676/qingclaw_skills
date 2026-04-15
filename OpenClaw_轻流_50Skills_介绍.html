@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw × 轻流 — 50 Skills 企业智能化解决方案</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1E2761;--navy-dark:#141B3D;--blue:#1B5E9E;--accent:#00B4D8;
+  --accent-light:#90E0EF;--white:#FFFFFF;--off-white:#F8F9FA;
+  --light-gray:#E9ECEF;--gray:#6C757D;--dark-gray:#343A40;
+  --text:#212529;--text-light:#ADB5BD;
+  --hr:#1B5E9E;--finance:#2E7D32;--ops:#E65100;--sales:#C62828;
+  --marketing:#6A1B9A;--eng:#283593;--product:#00838F;--legal:#4E342E;
+  --pm:#AD1457;--admin:#37474F;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;color:var(--text);line-height:1.6;background:var(--off-white)}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--blue)}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 50%,#1a3a6e 100%);color:var(--white);padding:100px 20px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(0,180,216,.08) 0%,transparent 50%),radial-gradient(circle at 70% 80%,rgba(144,224,239,.06) 0%,transparent 40%);pointer-events:none}
+.hero-badge{display:inline-block;padding:6px 20px;border:1px solid rgba(0,180,216,.4);border-radius:20px;font-size:13px;color:var(--accent-light);margin-bottom:24px;backdrop-filter:blur(4px);letter-spacing:1px}
+.hero h1{font-size:clamp(36px,6vw,64px);font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,#fff 0%,var(--accent-light) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .subtitle{font-size:clamp(16px,2.5vw,22px);color:var(--accent-light);margin-bottom:40px;font-weight:300}
+.hero-stats{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-bottom:40px}
+.hero-stat .num{font-size:48px;font-weight:800;color:var(--accent);line-height:1}
+.hero-stat .label{font-size:14px;color:var(--text-light);margin-top:4px}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#0096c7);color:var(--white);border-radius:8px;font-size:16px;font-weight:600;transition:transform .2s,box-shadow .2s}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,180,216,.3);color:#fff}
+
+/* Shared */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:36px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.section-title p{font-size:16px;color:var(--gray);max-width:640px;margin:0 auto}
+.tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;line-height:1.6}
+
+/* 5 Capabilities */
+.cap-section{background:var(--white)}
+.cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px}
+.cap-card{text-align:center;padding:32px 16px;border-radius:12px;border:1px solid var(--light-gray);transition:transform .2s,box-shadow .2s}
+.cap-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+.cap-icon{font-size:40px;margin-bottom:12px}
+.cap-card h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.cap-card .cap-sub{font-size:13px;color:var(--gray);margin-bottom:8px}
+.cap-card .cap-desc{font-size:12px;color:var(--text-light);line-height:1.5}
+
+/* MCP Section */
+.mcp-section{background:linear-gradient(135deg,#f0f7ff 0%,#e8f4fd 100%)}
+.mcp-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.mcp-card{background:var(--white);border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.06);border-left:4px solid var(--accent)}
+.mcp-card h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px}
+.mcp-card code{font-size:12px;color:var(--blue);background:#f0f7ff;padding:2px 8px;border-radius:4px;font-family:'SF Mono','Fira Code',monospace}
+.mcp-card p{font-size:13px;color:var(--gray);margin-top:8px}
+
+/* Domain Navigation */
+.domain-nav{background:var(--white);border-bottom:1px solid var(--light-gray);position:sticky;top:0;z-index:100;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.domain-nav-inner{display:flex;justify-content:center;gap:4px;padding:12px 24px;min-width:max-content}
+.domain-tab{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;border:none;background:transparent;color:var(--gray)}
+.domain-tab:hover{background:var(--light-gray)}
+.domain-tab.active{color:var(--white)}
+
+/* Domain Sections */
+.domain-section{padding:60px 0 40px;border-bottom:1px solid var(--light-gray)}
+.domain-header{display:flex;align-items:center;gap:20px;margin-bottom:32px;flex-wrap:wrap}
+.domain-num{font-size:48px;font-weight:800;line-height:1;opacity:.9}
+.domain-info h3{font-size:28px;font-weight:700}
+.domain-info .domain-en{font-size:14px;font-weight:600;opacity:.7}
+.domain-info .domain-desc{font-size:14px;color:var(--gray);margin-top:4px}
+.chain-bar{background:var(--navy-dark);color:var(--accent-light);padding:12px 20px;border-radius:8px;font-size:12px;font-family:'SF Mono','Fira Code',monospace;margin-bottom:28px;overflow-x:auto;white-space:nowrap;letter-spacing:.3px}
+
+/* Skill Cards */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
+.skill-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04);transition:transform .25s,box-shadow .25s;cursor:pointer;border:1px solid var(--light-gray)}
+.skill-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.1)}
+.skill-card-top{padding:4px 0 0}
+.skill-card-accent{height:4px;border-radius:2px 2px 0 0}
+.skill-card-body{padding:20px}
+.skill-card-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.skill-num{font-size:24px;font-weight:800;opacity:.85}
+.skill-names h4{font-size:16px;font-weight:700;color:var(--text)}
+.skill-names .skill-en{font-size:12px;color:var(--gray);font-weight:400}
+.skill-func{font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:4px}
+.skill-func .step{background:var(--off-white);padding:2px 8px;border-radius:4px;font-size:12px;white-space:nowrap}
+.skill-func .arrow{color:var(--text-light);font-size:11px}
+.skill-tags{display:flex;gap:6px;flex-wrap:wrap}
+
+/* Skill Detail Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;justify-content:center;align-items:center;padding:20px;backdrop-filter:blur(2px)}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);border-radius:16px;max-width:680px;width:100%;max-height:85vh;overflow-y:auto;padding:0;position:relative;animation:modalIn .25s ease-out}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-accent{height:6px;border-radius:16px 16px 0 0}
+.modal-body{padding:32px}
+.modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border:none;background:rgba(0,0,0,.06);border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(0,0,0,.12)}
+.modal h2{font-size:22px;font-weight:700;margin-bottom:4px}
+.modal .modal-en{font-size:14px;color:var(--gray);margin-bottom:20px}
+.modal-section{margin-bottom:20px}
+.modal-section h5{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray);margin-bottom:8px}
+.modal-section .flow-steps{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.modal-section .flow-step{background:var(--off-white);padding:6px 14px;border-radius:6px;font-size:13px}
+.modal-section .flow-arrow{color:var(--text-light);font-size:12px}
+.modal-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.modal-tags .tag{font-size:13px;padding:4px 14px}
+.modal-mcp{background:var(--off-white);border-radius:8px;padding:16px;font-size:13px;color:var(--text)}
+.modal-mcp strong{color:var(--blue)}
+.modal-install{background:#f0f7ff;border-radius:8px;padding:16px;margin-top:12px;font-size:13px;color:var(--text)}
+
+/* Stats Section */
+.stats-section{background:var(--navy-dark);color:var(--white);padding:80px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-bottom:48px}
+.stat-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px;text-align:center;transition:background .2s}
+.stat-card:hover{background:rgba(255,255,255,.1)}
+.stat-card .stat-icon{font-size:32px;margin-bottom:8px}
+.stat-card .stat-num{font-size:36px;font-weight:800;color:var(--accent)}
+.stat-card .stat-pct{font-size:14px;color:var(--accent-light)}
+.stat-card .stat-name{font-size:14px;color:var(--text-light);margin-top:4px}
+.type-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.type-card{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.04);border-radius:10px;padding:20px;border-left:4px solid}
+.type-card .type-num{font-size:32px;font-weight:800}
+.type-card .type-name{font-size:15px;font-weight:600;color:var(--white)}
+.type-card .type-desc{font-size:12px;color:var(--text-light);margin-top:2px}
+
+/* Install Section */
+.install-section{background:var(--white)}
+.install-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:32px}
+.install-method{border-radius:16px;padding:32px;border:1px solid var(--light-gray)}
+.install-method h3{font-size:20px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.install-step{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--white);flex-shrink:0}
+.step-content{flex:1}
+.step-content h4{font-size:14px;font-weight:600;margin-bottom:2px}
+.step-content p{font-size:13px;color:var(--gray)}
+.step-content code{display:block;background:#f6f8fa;padding:8px 12px;border-radius:6px;margin-top:6px;font-size:12px;font-family:'SF Mono','Fira Code',monospace;color:var(--text);overflow-x:auto}
+
+/* Footer */
+.footer{background:var(--navy-dark);color:var(--text-light);text-align:center;padding:40px 20px}
+.footer .footer-brand{font-size:20px;font-weight:700;color:var(--white);margin-bottom:8px}
+.footer p{font-size:13px}
+
+/* Search */
+.search-box{max-width:480px;margin:0 auto 40px;position:relative}
+.search-box input{width:100%;padding:14px 20px 14px 48px;border:2px solid var(--light-gray);border-radius:12px;font-size:15px;outline:none;transition:border-color .2s;background:var(--white)}
+.search-box input:focus{border-color:var(--accent)}
+.search-box .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--gray)}
+.search-count{text-align:center;font-size:13px;color:var(--gray);margin-bottom:20px}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero{padding:60px 20px 50px}
+  .hero h1{font-size:32px}
+  .hero-stats{gap:32px}
+  .hero-stat .num{font-size:36px}
+  .skills-grid{grid-template-columns:1fr}
+  .domain-header{flex-direction:column;align-items:flex-start;gap:8px}
+  .domain-num{font-size:36px}
+  section{padding:48px 0}
+  .modal-body{padding:20px}
+}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:#999}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">AI Agent + 无代码平台 · 企业级解决方案</div>
+    <h1>OpenClaw × 轻流</h1>
+    <p class="subtitle">「搭 · 问 · 析 · 生 · 联」五大 AI 能力矩阵 · 50 Skills 企业智能化解决方案</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">10</div><div class="label">业务领域</div></div>
+      <div class="hero-stat"><div class="num">50</div><div class="label">AI Skills</div></div>
+      <div class="hero-stat"><div class="num">3</div><div class="label">MCP 包</div></div>
+      <div class="hero-stat"><div class="num">6</div><div class="label">能力维度</div></div>
+    </div>
+    <a href="#domains" class="hero-cta">探索 50 Skills ↓</a>
+  </div>
+</section>
+
+<!-- 5 Capabilities -->
+<section class="cap-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>轻流 10.0 五大 AI 能力</h2>
+      <p>每个 Skill 均基于轻流「搭·问·析·生·联」能力矩阵构建，实现 AI 与无代码的深度融合</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-card" style="border-top:3px solid var(--blue)">
+        <div class="cap-icon">🏗️</div>
+        <h3>搭</h3>
+        <div class="cap-sub">Builder 建模</div>
+        <div class="cap-desc">自然语言建表单应用、自定义页面、AI 生成字段结构，一句话搭建完整业务系统</div>
+      </div>
+      <div class="cap-card" style="border-top:3px solid var(--finance)">
+        <div class="cap-icon">👥</div>
+        <h3>问</h3>
+        <div class="cap-sub">智能问答</div>
+        <div class="cap-desc">小Q智能助手、产品问答、联网搜索、企业知识库 RAG，让知识触手可及</div>
+      </div>
+      <div class="cap-card" style="border-top:3px solid var(--ops)">
+        <div class="cap-icon">📊</div>
+        <h3>析</h3>
+        <div class="cap-sub">数据分析</div>
+        <div class="cap-desc">AI 公式生成、AI 代码块、AI 数据分析、业务洞察，数据驱动决策</div>
+      </div>
+      <div class="cap-card" style="border-top:3px solid var(--marketing)">
+        <div class="cap-icon">📝</div>
+        <h3>生</h3>
+        <div class="cap-sub">内容生成</div>
+        <div class="cap-desc">文本总结、内容生成、提取分类、翻译、图片识别/生成、文档解析</div>
+      </div>
+      <div class="cap-card" style="border-top:3px solid var(--sales)">
+        <div class="cap-icon">⚡</div>
+        <h3>联</h3>
+        <div class="cap-sub">流程联动</div>
+        <div class="cap-desc">表单↔页面联动、QLinker 外部 API、Q-Robot 自动化、MCP 跨系统集成</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MCP Section -->
+<section class="mcp-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>轻流 MCP 三件套</h2>
+      <p>通过 Model Context Protocol 实现 AI Agent 与轻流平台的深度打通</p>
+    </div>
+    <div class="mcp-cards">
+      <div class="mcp-card">
+        <h3>CLI 命令行工具</h3>
+        <code>@josephyan/qingflow-cli@beta</code>
+        <p>支持搭建、发布、调试，CLI builder 能力辅助快速搭建应用</p>
+      </div>
+      <div class="mcp-card">
+        <h3>运行态能力（User MCP）</h3>
+        <code>@josephyan/qingflow-app-user-mcp@beta</code>
+        <p>数据读写 record_list / record_insert / record_update、任务执行 task_action_execute、数据分析 record_analyze、导入导出</p>
+      </div>
+      <div class="mcp-card">
+        <h3>搭建态能力（Builder MCP）</h3>
+        <code>@josephyan/qingflow-app-builder-mcp@beta</code>
+        <p>应用建模 app_schema_apply、布局 app_layout_apply、流程 app_flow_apply、视图 app_views_apply、图表 app_charts_apply、门户 portal_apply</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Domain Navigation -->
+<nav class="domain-nav" id="domainNav">
+  <div class="domain-nav-inner" id="domainTabs"></div>
+</nav>
+
+<!-- Domains & Skills -->
+<section id="domains" style="padding-top:20px">
+  <div class="container">
+    <div class="section-title" style="margin-bottom:24px">
+      <h2>50 Skills 全景展示</h2>
+      <p>10 大业务领域 × 每领域 5 个 AI Skill，构建企业全场景智能化闭环</p>
+    </div>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="搜索 Skill 名称、功能、标签..." oninput="filterSkills()">
+    </div>
+    <div class="search-count" id="searchCount"></div>
+    <div id="domainSections"></div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats-section">
+  <div class="container">
+    <div class="section-title" style="margin-bottom:48px">
+      <h2 style="color:#fff">轻流能力维度统计</h2>
+      <p style="color:var(--text-light)">50 个 Skills 对轻流各能力维度的覆盖分布</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-icon">📝</div><div class="stat-num">35</div><div class="stat-pct">70%</div><div class="stat-name">生（AI 内容生成）</div></div>
+      <div class="stat-card"><div class="stat-icon">📊</div><div class="stat-num">32</div><div class="stat-pct">64%</div><div class="stat-name">析（数据分析）</div></div>
+      <div class="stat-card"><div class="stat-icon">🏗️</div><div class="stat-num">20</div><div class="stat-pct">40%</div><div class="stat-name">搭（Builder 建模）</div></div>
+      <div class="stat-card"><div class="stat-icon">⚡</div><div class="stat-num">19</div><div class="stat-pct">38%</div><div class="stat-name">联（流程联动）</div></div>
+      <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-num">10</div><div class="stat-pct">20%</div><div class="stat-name">问（组织知识）</div></div>
+      <div class="stat-card"><div class="stat-icon">📦</div><div class="stat-num">3</div><div class="stat-pct">6%</div><div class="stat-name">导入导出</div></div>
+    </div>
+    <div class="section-title" style="margin-bottom:32px">
+      <h2 style="color:#fff;font-size:24px">Skill 类型分布</h2>
+    </div>
+    <div class="type-grid">
+      <div class="type-card" style="border-color:var(--marketing)"><div><div class="type-num" style="color:var(--marketing)">22</div></div><div><div class="type-name">纯 AI 生成型</div><div class="type-desc">以文案/报告/分析生成为主，结果可回写轻流</div></div></div>
+      <div class="type-card" style="border-color:var(--blue)"><div><div class="type-num" style="color:var(--accent)">14</div></div><div><div class="type-name">Builder 搭建型</div><div class="type-desc">直接在轻流中搭建应用/流程/看板</div></div></div>
+      <div class="type-card" style="border-color:var(--ops)"><div><div class="type-num" style="color:var(--ops)">8</div></div><div><div class="type-name">AI + 数据操作型</div><div class="type-desc">AI 生成 + 读写轻流数据</div></div></div>
+      <div class="type-card" style="border-color:var(--sales)"><div><div class="type-num" style="color:var(--sales)">6</div></div><div><div class="type-name">综合集成型</div><div class="type-desc">同时涵盖搭建、数据、流程、AI 生成</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Installation -->
+<section class="install-section" id="install">
+  <div class="container">
+    <div class="section-title">
+      <h2>安装与配置</h2>
+      <p>两种方式快速上手 OpenClaw × 轻流 Skills</p>
+    </div>
+    <div class="install-grid">
+      <div class="install-method" style="background:linear-gradient(135deg,#f0f7ff,#e8f4fd)">
+        <h3><span style="font-size:24px">📄</span> 方式一：直接安装 MD 文件</h3>
+        <div class="install-step">
+          <div class="step-num" style="background:var(--blue)">1</div>
+          <div class="step-content">
+            <h4>获取 Skill 文件</h4>
+            <p>每个 Skill 均为独立的 .md 文件，包含完整的身份定义、能力描述和使用指令</p>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="step-num" style="background:var(--blue)">2</div>
+          <div class="step-content">
+            <h4>发送给 OpenClaw</h4>
+            <p>将 .md 文件直接发送给 OpenClaw（小龙虾）即可安装使用</p>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="step-num" style="background:var(--blue)">3</div>
+          <div class="step-content">
+            <h4>开始使用</h4>
+            <p>通过自然语言指令调用 Skill，AI Agent 自动执行对应能力</p>
+          </div>
+        </div>
+      </div>
+      <div class="install-method" style="background:linear-gradient(135deg,#fff8e1,#fff3e0)">
+        <h3><span style="font-size:24px">🔗</span> 方式二：连接轻流 MCP</h3>
+        <div class="install-step">
+          <div class="step-num" style="background:var(--ops)">1</div>
+          <div class="step-content">
+            <h4>安装轻流 MCP 包</h4>
+            <code>npm install @josephyan/qingflow-cli@beta
+npm install @josephyan/qingflow-app-user-mcp@beta
+npm install @josephyan/qingflow-app-builder-mcp@beta</code>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="step-num" style="background:var(--ops)">2</div>
+          <div class="step-content">
+            <h4>认证登录</h4>
+            <p>方式A：账号密码登录 → auth_login<br>方式B：Token 接入 → auth_use_token</p>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="step-num" style="background:var(--ops)">3</div>
+          <div class="step-content">
+            <h4>选择工作区</h4>
+            <code>workspace_list → workspace_select</code>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="step-num" style="background:var(--ops)">4</div>
+          <div class="step-content">
+            <h4>验证连接</h4>
+            <code>auth_whoami → 确认身份和工作区</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-brand">OpenClaw × 轻流</div>
+  <p>让每个企业都拥有智能化的工作方式</p>
+  <p style="margin-top:8px;font-size:12px;opacity:.6">50 Skills · 10 大领域 · 完整智能闭环 · 2026</p>
+</footer>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-accent" id="modalAccent"></div>
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const TAG_CONFIG = {
+  '搭': { icon: '🏗️', label: '搭(Builder)', bg: '#DCEAF7', color: '#1B5E9E' },
+  '问': { icon: '👥', label: '问(知识)', bg: '#E8F5E9', color: '#2E7D32' },
+  '析': { icon: '📊', label: '析(分析)', bg: '#FFF3E0', color: '#E65100' },
+  '生': { icon: '📝', label: '生(生成)', bg: '#F3E5F5', color: '#6A1B9A' },
+  '联': { icon: '⚡', label: '联(联动)', bg: '#FFEBEE', color: '#C62828' },
+  '导入导出': { icon: '📦', label: '导入导出', bg: '#ECEFF1', color: '#37474F' },
+  '导': { icon: '📦', label: '导入导出', bg: '#ECEFF1', color: '#37474F' },
+};
+
+const domains = [
+  { id:"01", key:"HR", cn:"人力资源", en:"Human Resources", color:"#1B5E9E", light:"#DCEAF7",
+    desc:"覆盖招聘、培训、绩效、入职、人力分析全流程，AI 赋能 HR 从事务型向战略型转变",
+    chain:"01 招聘引擎(筛选录用) → 04 入职搭建器(入职流转) → 02 培训设计师(岗前培训) → 03 绩效助手(试用期考核) → 05 人力看板(数据沉淀)",
+    mcpNote:"Skill 01 参考 QingClaw「智能简历识别入库方案」，通过 MCP 自动将候选人信息写入轻流人才库；Skill 04 通过 app_schema_apply + app_flow_apply 一键搭建入职应用；Skill 05 通过 app_charts_apply + portal_apply 搭建 HR 数据门户。",
+    skills:[
+      {num:"01",en:"AI Recruiting Engine",cn:"智能招聘引擎",func:"简历解析→JD匹配→面试题生成→候选人评估→人才库入库",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
+      {num:"02",en:"IDA: Instructional Design Agent",cn:"培训设计师",func:"培训需求诊断→大纲生成→讲义制作→测试题→考核评估",tags:["生"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"03",en:"Personio",cn:"绩效管理助手",func:"目标拆解(KPI/OKR)→进度跟踪→达成差距分析→面谈提纲→改进建议",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"04",en:"Onboarding Flow Builder",cn:"入职流程搭建器",func:"一键搭建入职审批应用（材料收集→审批→任务清单→试用期跟踪）",tags:["搭","联","问"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
+      {num:"05",en:"HR Analytics Dashboard",cn:"人力数据看板",func:"搭建人力分析看板（人员结构/流失率/招聘漏斗/培训完成率）",tags:["搭","析"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
+    ]},
+  { id:"02", key:"Finance", cn:"财务管理", en:"Finance", color:"#2E7D32", light:"#E8F5E9",
+    desc:"覆盖报销、分析、应收应付、预算、发票全场景，AI 让财务从核算型走向分析型",
+    chain:"10 发票处理(票据入库) → 06 报销审核(费用审核) → 09 预算助手(预算控制) → 07 财务分析(月度分析) → 08 应收应付(账款管理)",
+    mcpNote:"Skill 09 通过 Builder 搭建完整预算管理应用；Skill 10 通过 file_upload_local 上传发票图片，AI 自动解析后通过 record_insert 写入台账；Skill 06 通过 task_action_execute 实现自动审核意见。",
+    skills:[
+      {num:"06",en:"Clawshier",cn:"报销审核助手",func:"报销单解析→票据校验→制度比对→异常识别→审核意见生成",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"07",en:"Accounting",cn:"财务分析师",func:"多表归集→差异分析→指标诊断→风险预警→分析报告",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"08",en:"Xero",cn:"应收应付管理",func:"账款汇总→账期管理→异常核查→催款话术→对账跟进",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"09",en:"Budget Planner",cn:"预算编制助手",func:"预算模板搭建→历史数据对比→部门预算审批流程→执行偏差预警",tags:["生","析","搭","联"],mcp:["qingflow-app-user-mcp","qingflow-app-builder-mcp"],type:"综合集成"},
+      {num:"10",en:"Invoice Processor",cn:"发票处理中心",func:"发票OCR识别→进销项匹配→税率校验→台账管理→自动入库",tags:["析","导入导出","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
+    ]},
+  { id:"03", key:"Operations", cn:"运营管理", en:"Operations", color:"#E65100", light:"#FFF3E0",
+    desc:"覆盖数据分析、活动策划、用户反馈、SOP 管理、运营看板全链路",
+    chain:"11 数据分析(发现问题) → 13 反馈分析(用户视角) → 12 活动方案(策略执行) → 14 SOP生成(流程固化) → 15 看板搭建(持续监控)",
+    mcpNote:"Skill 15 参考 QingClaw「应用数据分析方案」，通过 app_charts_apply + portal_apply 搭建可视化运营门户；Skill 14 将 SOP 通过 app_flow_apply 落地为审批流程；Skill 11 通过 record_analyze 实现跨表分析。",
+    skills:[
+      {num:"11",en:"Data Analysis",cn:"运营数据分析师",func:"核心指标归集→波动识别→原因拆解→影响分析→复盘结论",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"12",en:"CopyWriter",cn:"活动方案生成器",func:"活动策划→文案输出→物料清单→执行流程→复盘框架",tags:["生"],mcp:[],type:"纯AI生成"},
+      {num:"13",en:"Review Summarizer",cn:"用户反馈分析师",func:"反馈归集→问题分类→情绪判断→优先级排序→优化建议",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"14",en:"Automation Workflows",cn:"运营SOP生成器",func:"流程拆解→节点说明→SOP模板→检查清单→风险标记",tags:["生","搭","联"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
+      {num:"15",en:"KPI Dashboard Builder",cn:"运营看板搭建器",func:"在轻流中搭建数据看板（图表配置/门户展示/定时刷新）",tags:["搭","析"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
+    ]},
+  { id:"04", key:"Sales", cn:"销售管理", en:"Sales", color:"#C62828", light:"#FFEBEE",
+    desc:"覆盖线索挖掘、客户跟进、方案生成、CRM 搭建、赢输分析全流程",
+    chain:"16 线索挖掘(获取线索) → 19 CRM搭建(系统承载) → 17 跟进管理(推进商机) → 18 方案生成(输出方案) → 20 赢输分析(复盘沉淀)",
+    mcpNote:"Skill 19 是重量级 Builder Skill，通过 app_schema_apply 定义表单、app_views_apply 配置看板视图、app_flow_apply 配置审批流程、app_charts_apply 搭建销售漏斗；Skill 16/17 通过 record_insert/update 直接写入 CRM 数据。",
+    skills:[
+      {num:"16",en:"AI Lead Generator",cn:"销售线索挖掘",func:"线索整理→意向筛选→分层分类→触达话术→跟进表",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"17",en:"Sales Pipeline Tracker",cn:"客户跟进管理",func:"跟进记录整理→阶段判断→异议提炼→话术生成→跟进清单",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"18",en:"Proposal Writer",cn:"销售方案生成",func:"需求提炼→方案框架→能力匹配→话术要点→方案摘要",tags:["生"],mcp:[],type:"纯AI生成"},
+      {num:"19",en:"CRM App Builder",cn:"客户管理系统搭建器",func:"一键搭建完整CRM（客户表/商机表/跟进记录/合同/销售漏斗看板）",tags:["搭","析","联","问"],mcp:["qingflow-app-user-mcp","qingflow-app-builder-mcp"],type:"综合集成"},
+      {num:"20",en:"Win-Loss Analyzer",cn:"赢输单分析师",func:"成交/丢单原因归纳→竞品对比→策略建议→经验沉淀",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+    ]},
+  { id:"05", key:"Marketing", cn:"市场营销", en:"Marketing", color:"#6A1B9A", light:"#F3E5F5",
+    desc:"覆盖内容生成、社媒管理、市场调研、SEO 优化、ROI 分析全链路",
+    chain:"23 市场调研(洞察方向) → 21 内容生成(产出内容) → 24 SEO优化(搜索优化) → 22 内容日历(排期执行) → 25 ROI分析(效果复盘)",
+    mcpNote:"Skill 22 可通过 Builder 搭建「内容排期管理应用」，配置选题→撰写→审核→发布的协作流程；Skill 25 通过 record_analyze 分析投放数据，app_charts_apply 搭建 ROI 看板。",
+    skills:[
+      {num:"21",en:"Marketing Skills",cn:"营销内容生成器",func:"选题策划→文案输出→卖点提炼→渠道适配→发布建议",tags:["生"],mcp:[],type:"纯AI生成"},
+      {num:"22",en:"Social Media Content Calendar",cn:"社媒内容日历",func:"活动方案→宣传文案→排期编排→物料清单→复盘框架",tags:["生","搭"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
+      {num:"23",en:"Competitive Intelligence",cn:"市场调研分析师",func:"竞品归集→差异提炼→用户需求洞察→机会点→调研结论",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"24",en:"SEO Content Optimizer",cn:"SEO内容优化师",func:"关键词分析→标题优化→内容结构→元数据建议→排名策略",tags:["生"],mcp:[],type:"纯AI生成"},
+      {num:"25",en:"Campaign ROI Analyzer",cn:"活动ROI分析师",func:"投放数据归集→ROI计算→渠道效果对比→预算优化→策略建议",tags:["生","析","搭"],mcp:["qingflow-app-user-mcp","qingflow-app-builder-mcp"],type:"AI+数据"},
+    ]},
+  { id:"06", key:"Engineering", cn:"技术研发", en:"Engineering", color:"#283593", light:"#E8EAF6",
+    desc:"覆盖技术文档、代码评审、测试用例、缺陷管理、API 集成全流程",
+    chain:"26 技术文档(需求理解) → 27 代码评审(质量把关) → 28 测试用例(测试覆盖) → 29 缺陷管理(问题跟踪) → 30 API集成(系统打通)",
+    mcpNote:"Skill 29 通过 Builder 搭建完整缺陷管理系统，app_flow_apply 配置自动分派规则；Skill 30 深度利用 QLinker 和代码块配置能力，支持 record_code_block_run 运行代码块并回写。",
+    skills:[
+      {num:"26",en:"Technical Documentation Engine",cn:"技术文档生成器",func:"README结构→项目简介→接口文档→部署手册→技术文档初稿",tags:["生"],mcp:[],type:"纯AI生成"},
+      {num:"27",en:"Code Review",cn:"代码评审助手",func:"Bug识别→规范检查→性能分析→修改建议→评审结论",tags:["生"],mcp:[],type:"纯AI生成"},
+      {num:"28",en:"Test Case Generator",cn:"测试用例生成器",func:"场景提取→用例设计→异常补充→模板输出→可执行用例表",tags:["生"],mcp:[],type:"纯AI生成"},
+      {num:"29",en:"Bug Tracker Flow",cn:"缺陷管理流程搭建器",func:"搭建Bug管理应用（提交→分派→修复→验证→关闭），含优先级规则",tags:["搭","析","联","问"],mcp:["qingflow-app-builder-mcp","qingflow-app-user-mcp"],type:"综合集成"},
+      {num:"30",en:"API Integration Builder",cn:"API集成搭建器",func:"在轻流中配置QLinker外部API对接、代码块逻辑、Webhook触发",tags:["搭","联"],mcp:["qingflow-app-builder-mcp","qingflow-cli"],type:"Builder搭建"},
+    ]},
+  { id:"07", key:"Product", cn:"产品管理", en:"Product", color:"#00838F", light:"#E0F7FA",
+    desc:"覆盖需求分析、定价策略、用户故事、需求池管理、反馈跟踪全流程",
+    chain:"35 反馈跟踪(收集需求) → 31 产品经理(分析输出) → 33 用户故事(拆解故事) → 34 需求池搭建(系统管理) → 32 定价策略(商业决策)",
+    mcpNote:"Skill 34 通过 Builder 搭建需求池，app_views_apply 配置看板视图；Skill 35 搭建反馈收集门户，通过 portal_apply 发布供外部用户提交反馈；利用 AI 按钮「内容分类」能力自动分类。",
+    skills:[
+      {num:"31",en:"Product Manager",cn:"产品经理助手",func:"需求分析→PRD文档框架→功能说明→验收标准→路线图建议",tags:["生"],mcp:[],type:"纯AI生成"},
+      {num:"32",en:"Pricing Strategy",cn:"定价策略师",func:"成本分析→定价建模→竞品对比→分层方案→收益优化",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"33",en:"User Story Writer",cn:"用户故事编写器",func:"角色分析→故事编写→验收条件→优先级排序→迭代规划",tags:["生"],mcp:[],type:"纯AI生成"},
+      {num:"34",en:"Requirement Pool Builder",cn:"需求池搭建器",func:"搭建需求管理应用（需求提交→评审→排期→开发→验收），含优先级视图",tags:["搭","析","联","问"],mcp:["qingflow-app-builder-mcp","qingflow-app-user-mcp"],type:"综合集成"},
+      {num:"35",en:"User Feedback Tracker",cn:"用户反馈跟踪器",func:"搭建反馈收集应用（渠道归集→分类标签→关联需求→处理跟踪）",tags:["搭","析","联"],mcp:["qingflow-app-builder-mcp","qingflow-app-user-mcp"],type:"Builder搭建"},
+    ]},
+  { id:"08", key:"Legal", cn:"法务合规", en:"Legal", color:"#4E342E", light:"#EFEBE9",
+    desc:"覆盖合同审查、法务函件、合规检查、合同管理、知识库搭建全流程",
+    chain:"40 知识库(制度沉淀) → 38 合规检查(风险排查) → 36 合同审查(逐条审核) → 37 函件生成(外部沟通) → 39 合同管理(全程跟踪)",
+    mcpNote:"Skill 39 搭建合同全生命周期管理系统，含多级审批、到期自动提醒（Q-Robot）；Skill 40 对接轻流企业知识库 + RAG 能力，支持小Q助手的法务知识问答。",
+    skills:[
+      {num:"36",en:"Lawyer",cn:"合同审查助手",func:"条款提取→风险识别→版本比对→修改建议→审查意见",tags:["生"],mcp:[],type:"纯AI生成"},
+      {num:"37",en:"Legal Doc Writer",cn:"法务函件生成",func:"事实提炼→函件起草→措辞规范→权利主张→回复要求",tags:["生"],mcp:[],type:"纯AI生成"},
+      {num:"38",en:"Compliance Checker",cn:"合规检查助手",func:"制度比对→风险扫描→整改建议→合规报告→定期审查",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+      {num:"39",en:"Contract Lifecycle Manager",cn:"合同全生命周期管理",func:"搭建合同管理应用（起草→审批→签署→履行→到期提醒→归档）",tags:["搭","析","联","导入导出"],mcp:["qingflow-app-builder-mcp","qingflow-app-user-mcp"],type:"综合集成"},
+      {num:"40",en:"Legal Knowledge Base",cn:"法务知识库搭建器",func:"搭建企业法务知识库（法规库/案例库/模板库），支持智能检索",tags:["搭","问"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
+    ]},
+  { id:"09", key:"ProjectMgmt", cn:"项目管理", en:"Project Management", color:"#AD1457", light:"#FCE4EC",
+    desc:"覆盖项目看板、会议纪要、风险预警、工时管理、交付评审全流程",
+    chain:"41 项目看板(任务管理) → 44 工时统计(资源投入) → 42 会议纪要(过程沟通) → 43 风险预警(风险管控) → 45 交付评审(质量把关)",
+    mcpNote:"Skill 41 一键搭建项目管理系统（看板视图、甘特图视图）；Skill 42 将会议待办通过 record_insert 自动写入任务表并触发 Q-Robot 通知；Skill 44 通过 record_analyze 汇总项目人天消耗。",
+    skills:[
+      {num:"41",en:"Project Board Builder",cn:"项目看板搭建器",func:"搭建项目管理应用（任务分派/进度跟踪/甘特图/里程碑管理）",tags:["搭","析","联","问"],mcp:["qingflow-app-builder-mcp","qingflow-app-user-mcp"],type:"综合集成"},
+      {num:"42",en:"Meeting Minutes Generator",cn:"会议纪要生成器",func:"议题提取→决议整理→待办分派→跟踪提醒→归档沉淀",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
+      {num:"43",en:"Risk Alert Monitor",cn:"项目风险预警器",func:"风险识别→影响评估→预警规则→应对方案→风险台账",tags:["生","析","搭"],mcp:["qingflow-app-builder-mcp","qingflow-app-user-mcp"],type:"Builder搭建"},
+      {num:"44",en:"Timesheet Tracker",cn:"工时统计管理",func:"搭建工时填报应用（日报/周报提交→项目工时汇总→人效分析）",tags:["搭","析","联"],mcp:["qingflow-app-builder-mcp","qingflow-app-user-mcp"],type:"Builder搭建"},
+      {num:"45",en:"Deliverable Reviewer",cn:"交付物评审助手",func:"交付标准梳理→质量检查→评审意见→改进跟踪→验收报告",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
+    ]},
+  { id:"10", key:"AdminIT", cn:"行政与IT", en:"Admin & IT", color:"#37474F", light:"#ECEFF1",
+    desc:"覆盖资产管理、IT 工单、知识库、行政审批、供应商评估全场景",
+    chain:"49 审批中心(采购审批) → 50 供应商评估(选择供应商) → 46 资产管理(资产入库) → 47 IT工单(运维支持) → 48 知识库(经验沉淀)",
+    mcpNote:"Skill 46-49 均为重度 Builder 类 Skill；Skill 47 参考 QingClaw「智能派工方案」，AI 自动识别工单类型路由；Skill 48 对接轻流知识库 + RAG 能力；Skill 49 利用「段落布局」实现动态表单。",
+    skills:[
+      {num:"46",en:"Asset Manager",cn:"资产管理助手",func:"搭建资产管理应用（资产台账/领用归还/折旧计算/盘点管理）",tags:["搭","析","联","导入导出"],mcp:["qingflow-app-builder-mcp","qingflow-app-user-mcp"],type:"Builder搭建"},
+      {num:"47",en:"IT Helpdesk Flow",cn:"IT工单管理",func:"搭建IT工单系统（提交→分派→处理→反馈→满意度评价）",tags:["搭","联","问"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
+      {num:"48",en:"Knowledge Base Builder",cn:"企业知识库搭建器",func:"搭建知识管理门户（分类体系/文档管理/搜索/权限配置）",tags:["搭","析","问"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
+      {num:"49",en:"Office Approval Center",cn:"行政审批中心",func:"搭建通用审批应用（用车/用章/采购/会议室等多场景审批）",tags:["搭","联","问"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
+      {num:"50",en:"Supplier Evaluation",cn:"供应商评估助手",func:"供应商信息归集→评分体系→绩效分析→淘汰预警→推荐报告",tags:["生","析","搭"],mcp:["qingflow-app-builder-mcp","qingflow-app-user-mcp"],type:"AI+数据"},
+    ]},
+];
+
+// Render domain tabs
+const tabsEl = document.getElementById('domainTabs');
+domains.forEach(d => {
+  const btn = document.createElement('button');
+  btn.className = 'domain-tab';
+  btn.textContent = `${d.id} ${d.cn}`;
+  btn.dataset.domain = d.key;
+  btn.onclick = () => {
+    document.getElementById(`domain-${d.key}`).scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  tabsEl.appendChild(btn);
+});
+
+// Render domains
+const sectionsEl = document.getElementById('domainSections');
+domains.forEach(d => {
+  const section = document.createElement('div');
+  section.className = 'domain-section';
+  section.id = `domain-${d.key}`;
+
+  let skillsHTML = '';
+  d.skills.forEach(s => {
+    const steps = s.func.split('→').map(st => st.trim());
+    const stepsHTML = steps.map((st,i) => `<span class="step">${st}</span>${i<steps.length-1?'<span class="arrow">→</span>':''}`).join('');
+    const tagsHTML = s.tags.map(t => {
+      const cfg = TAG_CONFIG[t] || TAG_CONFIG['导'];
+      return `<span class="tag" style="background:${cfg.bg};color:${cfg.color}">${cfg.icon} ${cfg.label}</span>`;
+    }).join('');
+
+    skillsHTML += `
+      <div class="skill-card" onclick='openModal(${JSON.stringify(s).replace(/'/g,"&#39;")}, ${JSON.stringify({color:d.color,cn:d.cn,en:d.en,mcpNote:d.mcpNote}).replace(/'/g,"&#39;")})' data-search="${s.cn} ${s.en} ${s.func} ${s.tags.join(' ')} ${s.type}">
+        <div class="skill-card-top"><div class="skill-card-accent" style="background:${d.color}"></div></div>
+        <div class="skill-card-body">
+          <div class="skill-card-header">
+            <div class="skill-num" style="color:${d.color}">#${s.num}</div>
+            <div class="skill-names"><h4>${s.cn}</h4><div class="skill-en">${s.en}</div></div>
+          </div>
+          <div class="skill-func">${stepsHTML}</div>
+          <div class="skill-tags">${tagsHTML}</div>
+        </div>
+      </div>`;
+  });
+
+  section.innerHTML = `
+    <div class="domain-header">
+      <div class="domain-num" style="color:${d.color}">${d.id}</div>
+      <div class="domain-info">
+        <h3 style="color:${d.color}">${d.cn}<span class="domain-en" style="margin-left:12px">${d.en}</span></h3>
+        <div class="domain-desc">${d.desc}</div>
+      </div>
+    </div>
+    <div class="chain-bar">协作链路：${d.chain}</div>
+    <div class="skills-grid">${skillsHTML}</div>
+  `;
+  sectionsEl.appendChild(section);
+});
+
+// Modal
+function openModal(skill, domain) {
+  const overlay = document.getElementById('modalOverlay');
+  const accent = document.getElementById('modalAccent');
+  const body = document.getElementById('modalBody');
+  accent.style.background = domain.color;
+
+  const steps = skill.func.split('→').map(s => s.trim());
+  const stepsHTML = steps.map((s,i) => `<span class="flow-step">${s}</span>${i<steps.length-1?'<span class="flow-arrow">→</span>':''}`).join('');
+  const tagsHTML = skill.tags.map(t => {
+    const cfg = TAG_CONFIG[t] || TAG_CONFIG['导'];
+    return `<span class="tag" style="background:${cfg.bg};color:${cfg.color};font-size:13px;padding:4px 14px">${cfg.icon} ${cfg.label}</span>`;
+  }).join('');
+  const mcpHTML = skill.mcp.length ? skill.mcp.map(m => `<code style="display:inline-block;margin:2px 4px 2px 0;padding:4px 10px;background:#f0f7ff;border-radius:4px;font-size:12px">@josephyan/${m}@beta</code>`).join('') : '<span style="color:#999">无需 MCP 连接，纯 AI 生成能力</span>';
+
+  body.innerHTML = `
+    <h2 style="color:${domain.color}">#${skill.num} ${skill.cn}</h2>
+    <div class="modal-en">${skill.en} · ${domain.cn}(${domain.en})</div>
+    <div class="modal-tags">${tagsHTML}</div>
+    <div class="modal-section">
+      <h5>核心能力流程</h5>
+      <div class="flow-steps">${stepsHTML}</div>
+    </div>
+    <div class="modal-section">
+      <h5>Skill 类型</h5>
+      <span class="tag" style="background:${domain.color}15;color:${domain.color};font-size:13px;padding:4px 14px">${skill.type}</span>
+    </div>
+    <div class="modal-section">
+      <h5>需要的轻流 MCP 包</h5>
+      <div>${mcpHTML}</div>
+    </div>
+    <div class="modal-mcp">
+      <strong>轻流深度结合：</strong><br>${domain.mcpNote}
+    </div>
+    <div class="modal-install">
+      <strong>安装方式：</strong>将对应的 <code style="background:transparent;padding:0;font-size:inherit">.md</code> 文件直接发送给 OpenClaw（小龙虾）即可使用
+    </div>
+  `;
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+// Search
+function filterSkills() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.skill-card');
+  const sections = document.querySelectorAll('.domain-section');
+  let visible = 0;
+
+  cards.forEach(card => {
+    const match = !q || card.dataset.search.toLowerCase().includes(q);
+    card.style.display = match ? '' : 'none';
+    if(match) visible++;
+  });
+
+  sections.forEach(sec => {
+    const visibleCards = sec.querySelectorAll('.skill-card[style=""], .skill-card:not([style])');
+    const hasVisible = Array.from(sec.querySelectorAll('.skill-card')).some(c => c.style.display !== 'none');
+    sec.style.display = hasVisible ? '' : 'none';
+  });
+
+  const countEl = document.getElementById('searchCount');
+  countEl.textContent = q ? `找到 ${visible} 个匹配的 Skills` : '';
+}
+
+// Sticky nav active state
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      const dk = entry.target.id.replace('domain-','');
+      document.querySelectorAll('.domain-tab').forEach(t => {
+        const isActive = t.dataset.domain === dk;
+        t.classList.toggle('active', isActive);
+        if(isActive) {
+          const d = domains.find(d => d.key === dk);
+          t.style.background = d ? d.color : '';
+        } else {
+          t.style.background = '';
+        }
+      });
+    }
+  });
+}, { threshold: 0.2, rootMargin: '-80px 0px -60% 0px' });
+
+document.querySelectorAll('.domain-section').forEach(s => observer.observe(s));
+
+// Animate stats on scroll
+const statsObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.querySelectorAll('.stat-num, .type-num').forEach(el => {
+        const target = parseInt(el.textContent);
+        if(isNaN(target)) return;
+        let current = 0;
+        const step = Math.ceil(target / 30);
+        const timer = setInterval(() => {
+          current += step;
+          if(current >= target) { current = target; clearInterval(timer); }
+          el.textContent = current;
+        }, 30);
+      });
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.stats-section').forEach(s => statsObserver.observe(s));
+</script>
+</body>
+</html>
