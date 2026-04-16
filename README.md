@@ -238,6 +238,203 @@ skills/
 
 ---
 
+## 轻流 MCP 能力清单
+
+> 基于当前可直接调用的 MCP 工具整理，覆盖运行态 + Builder + CLI 全能力。
+
+### 一、@josephyan/qingflow-cli — CLI 命令行工具
+
+用于本地开发、调试和发布辅助，是 Builder 类 Skill 的 CLI 入口。
+
+```bash
+npm install @josephyan/qingflow-cli@beta
+```
+
+| 能力 | 说明 |
+|------|------|
+| 认证登录 | 支持账号密码 / Token 两种方式完成认证 |
+| 工作区切换 | 列出并选择目标工作区 |
+| 应用调试 | 配合 Builder MCP 完成建模、发布、校验流程 |
+
+---
+
+### 二、@josephyan/qingflow-app-user-mcp — 运行态能力
+
+面向数据读写、任务处理、分析统计、导入导出等日常运行场景。
+
+```bash
+npm install @josephyan/qingflow-app-user-mcp@beta
+```
+
+#### 2.1 认证与工作区
+
+| 工具 | 说明 |
+|------|------|
+| `auth_login` | 账号密码登录 |
+| `auth_logout` | 退出当前登录态 |
+| `auth_use_token` | Token 接入 |
+| `auth_whoami` | 查看当前身份与工作区 |
+| `workspace_list` | 列出可用工作区 |
+| `workspace_select` | 切换到目标工作区 |
+
+#### 2.2 应用与门户读取
+
+| 工具 | 说明 |
+|------|------|
+| `app_list` | 列出所有应用 |
+| `app_search` | 按关键字搜索应用 |
+| `app_get` | 获取单个应用详情 |
+| `view_get` | 读取视图配置 |
+| `chart_get` | 读取图表配置 |
+| `portal_list` | 列出门户 |
+| `portal_get` | 获取门户详情 |
+
+#### 2.3 组织架构与人员目录
+
+| 工具 | 说明 |
+|------|------|
+| `directory_list_internal_departments` | 列出内部部门 |
+| `directory_list_sub_departments` | 列出子部门 |
+| `directory_list_all_departments` | 获取全量部门树 |
+| `directory_list_internal_users` | 列出内部成员 |
+| `directory_list_all_internal_users` | 获取全量内部成员 |
+| `directory_list_external_members` | 列出外部联系人 |
+| `directory_search` | 统一目录搜索 |
+
+#### 2.4 记录 CRUD
+
+| 工具 | 说明 |
+|------|------|
+| `record_get` | 读取单条记录 |
+| `record_list` | 列表浏览记录 |
+| `record_insert` | 新增记录 |
+| `record_update` | 更新记录 |
+| `record_delete` | 删除记录 |
+| `record_browse_schema_get` | 浏览字段 schema |
+| `record_insert_schema_get` | 获取新增 schema |
+| `record_update_schema_get` | 获取更新 schema |
+| `record_member_candidates` | 获取成员字段候选范围 |
+| `record_department_candidates` | 获取部门字段候选范围 |
+
+#### 2.5 记录分析
+
+| 工具 | 说明 |
+|------|------|
+| `record_analyze` | 基于字段 schema 的分析型查询，支持分组、聚合、统计、排序、筛选 |
+
+#### 2.6 导入与导出
+
+| 工具 | 说明 |
+|------|------|
+| `record_import_template_get` | 获取导入模板 |
+| `record_import_schema_get` | 获取导入 schema |
+| `record_import_verify` | 导入数据校验 |
+| `record_import_repair_local` | 修复本地导入文件 |
+| `record_import_start` | 启动导入 |
+| `record_import_status_get` | 查询导入状态 |
+
+#### 2.7 文件与附件
+
+| 工具 | 说明 |
+|------|------|
+| `file_get_upload_info` | 获取上传信息 |
+| `file_upload_local` | 上传本地文件（图片、附件、导入模板等） |
+
+#### 2.8 任务与流程
+
+| 工具 | 说明 |
+|------|------|
+| `task_list` | 查询任务列表 / 待办箱 |
+| `task_get` | 获取任务详情 |
+| `task_workflow_log_get` | 获取流程日志 |
+| `task_associated_report_detail_get` | 获取关联报表明细 |
+| `task_action_execute` | 执行任务动作（审批、转交、退回等） |
+
+#### 2.9 代码块
+
+| 工具 | 说明 |
+|------|------|
+| `record_code_block_schema_get` | 读取代码块 schema |
+| `record_code_block_run` | 执行代码块（计算字段、外部查询回填等） |
+
+---
+
+### 三、@josephyan/qingflow-app-builder-mcp — 搭建态能力
+
+面向应用建模、流程配置、视图图表、门户发布等搭建场景。
+
+```bash
+npm install @josephyan/qingflow-app-builder-mcp@beta
+```
+
+#### 3.1 认证与工作区
+
+| 工具 | 说明 |
+|------|------|
+| `auth_login` | Builder 侧账号登录 |
+| `auth_use_token` | Builder 侧 Token 接入 |
+| `workspace_select` | Builder 侧工作区切换 |
+
+#### 3.2 应用建模
+
+| 工具 | 说明 |
+|------|------|
+| `app_schema_apply` | 创建 / 更新应用字段结构 |
+| `app_layout_apply` | 配置表单段落与页面布局 |
+| `app_flow_apply` | 配置审批流 / 自动化流程 |
+| `app_views_apply` | 配置列表视图 / 看板视图 |
+| `app_charts_apply` | 创建趋势图、漏斗图、饼图、柱状图等 |
+| `app_publish_verify` | 发布前配置校验 |
+| `app_resolve` | 按名称或 key 解析应用 |
+
+#### 3.3 门户与解决方案包
+
+| 工具 | 说明 |
+|------|------|
+| `portal_apply` | 创建 / 更新门户 |
+| `portal_get` | 读取门户详情 |
+| `portal_list` | 列出门户 |
+| `package_create` | 创建解决方案包 |
+| `package_list` | 列出解决方案包 |
+| `package_resolve` | 按名称解析包 |
+| `package_attach_app` | 将应用挂载到解决方案包 |
+
+#### 3.4 角色与权限
+
+| 工具 | 说明 |
+|------|------|
+| `member_search` | 搜索成员 |
+| `role_create` | 创建角色 |
+| `role_search` | 搜索角色 |
+
+#### 3.5 辅助工具
+
+| 工具 | 说明 |
+|------|------|
+| `app_custom_button_create` | 创建自定义按钮 |
+| `app_custom_button_update` | 更新自定义按钮 |
+| `app_repair_code_blocks` | 修复代码块配置 |
+| `app_release_edit_lock_if_mine` | 释放发布编辑锁 |
+| `app_get_views` | 读取视图配置 |
+| `app_get_charts` | 读取图表配置 |
+| `builder.file_upload_local` | Builder 侧上传本地文件 |
+
+---
+
+### 五大能力总结
+
+| 能力类别 | 涵盖范围 | 关键工具 |
+|---------|---------|---------|
+| 🔄 运行态数据能力 | 读、写、删、分析、导入、文件上传、任务执行 | record_*, task_*, file_* |
+| 👥 组织与权限支撑 | 成员目录、部门目录、成员候选、角色管理 | directory_*, member_*, role_* |
+| 🏗️ Builder 建模能力 | 应用 schema、布局、流程、视图、图表、门户 | app_*_apply, portal_apply |
+| ⚡ 自动化扩展能力 | 代码块、QLinker、流程动作、图表/门户展示 | record_code_block_*, task_action_* |
+| 🔧 实施辅助能力 | 导入修复、编辑锁释放、发布校验、包管理 | record_import_*, package_*, app_publish_verify |
+
+> 本清单按当前可直接调用的 MCP 工具整理，代表已接入并可用的能力范围。
+
+---
+
 ## License
 
 MIT
