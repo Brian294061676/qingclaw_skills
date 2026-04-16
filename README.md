@@ -245,11 +245,9 @@ skills/
 
 ### 一、@josephyan/qingflow-cli — CLI 命令行工具
 
-用于本地开发、调试和发布辅助，是 Builder 类 Skill 的 CLI 入口。
-
-```bash
-npm install @josephyan/qingflow-cli@beta
-```
+| 包名 | 用途 | 安装命令 | 适用 Skill 类型 |
+|------|------|---------|----------------|
+| `@josephyan/qingflow-cli` | CLI 命令行工具，支持搭建 / 发布 / 调试 | `npm install @josephyan/qingflow-cli@beta` | Builder 类 Skill 的 CLI 辅助 |
 
 | 能力 | 说明 |
 |------|------|
