@@ -1,4 +1,4 @@
-# QingClaw Skills — OpenClaw × 轻流 51 Skills
+# QingClaw Skills — 轻流 51 Skills
 
 > AI Agent + 无代码平台 · 企业智能化解决方案
 
