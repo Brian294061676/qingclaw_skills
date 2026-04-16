@@ -1,8 +1,8 @@
-# QingClaw Skills — OpenClaw × 轻流 50 Skills
+# QingClaw Skills — OpenClaw × 轻流 51 Skills
 
 > AI Agent + 无代码平台 · 企业智能化解决方案
 
-以 [QingClaw](https://qingflow.com/qing-claw/)的 AI Agent 能力 + [轻流 10.0](https://qingclaw.oalite.com/)「搭·问·析·生·联」五大 AI 能力矩阵，覆盖企业 **10 大业务领域 × 5 = 50 个 Skills**，形成 "AI 生成 + 无代码搭建 + 数据驱动 + 流程自动化" 的完整智能闭环。
+以 [QingClaw](https://qingflow.com/qing-claw/)的 AI Agent 能力 + [轻流 10.0](https://qingclaw.oalite.com/)「搭·问·析·生·联」五大 AI 能力矩阵，覆盖企业 **10 大业务领域 51 个 Skills**，形成 "AI 生成 + 无代码搭建 + 数据驱动 + 流程自动化" 的完整智能闭环。
 
 **相关链接**：[QingClaw 客户端下载](https://qingflow.com/qing-claw/) | [轻流官网](https://qingflow.com) | [轻流 10.0 介绍](https://qingclaw.oalite.com/) | [50 Skills 介绍](https://qingclawskills.lovable.app)
 
@@ -56,7 +56,7 @@ npm install @josephyan/qingflow-app-builder-mcp@beta
 
 ---
 
-## 50 Skills 总览
+## 51 Skills 总览
 
 ### 一、人力资源 (HR)
 
@@ -108,7 +108,7 @@ npm install @josephyan/qingflow-app-builder-mcp@beta
 
 ### 四、销售管理 (Sales)
 
-> 覆盖线索挖掘、客户跟进、方案生成、CRM 搭建、赢输分析全流程
+> 覆盖线索挖掘、客户跟进、方案生成、CRM 搭建、赢输分析、录音分析全流程
 
 | # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
 |---|-----------|---------|---------|---------|
@@ -117,8 +117,9 @@ npm install @josephyan/qingflow-app-builder-mcp@beta
 | 18 | 销售方案生成 (Proposal Writer) | 需求提炼→方案框架→能力匹配→话术要点→方案摘要 | 📝 | - |
 | 19 | 客户管理系统搭建器 (CRM App Builder) | 一键搭建完整CRM（客户/商机/跟进/合同/销售漏斗看板） | 🏗️📊⚡👥 | app-builder + app-user |
 | 20 | 赢输单分析师 (Win-Loss Analyzer) | 成交/丢单原因归纳→竞品对比→策略建议→经验沉淀 | 📝📊 | app-user-mcp |
+| 51 | 销售录音分析师 (Sales Call Analyzer) | 录音转写→话术评估→客户意向分析→关键信息提取→改进建议→数据回写 | 📝📊⚡ | app-user-mcp |
 
-**协作链路**：`16 线索挖掘 → 19 CRM搭建 → 17 跟进管理 → 18 方案生成 → 20 赢输分析`
+**协作链路**：`16 线索挖掘 → 19 CRM搭建 → 17 跟进管理 → 51 录音分析 → 18 方案生成 → 20 赢输分析`
 
 ---
 
@@ -225,7 +226,7 @@ skills/
 ├── 01-HR/                  # 人力资源（5 Skills）
 ├── 02-Finance/             # 财务管理（5 Skills）
 ├── 03-Operations/          # 运营管理（5 Skills）
-├── 04-Sales/               # 销售管理（5 Skills）
+├── 04-Sales/               # 销售管理（6 Skills）
 ├── 05-Marketing/           # 市场营销（5 Skills）
 ├── 06-Engineering/         # 技术研发（5 Skills）
 ├── 07-Product/             # 产品管理（5 Skills）
