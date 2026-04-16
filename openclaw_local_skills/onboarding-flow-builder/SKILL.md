@@ -1,12 +1,16 @@
 ---
-name: Onboarding Flow Builder
+name: onboarding-flow-builder
 description: 轻流Builder深度集成——在轻流中一键搭建入职管理应用，包含材料收集表单、多级审批流程、入职任务清单、试用期跟踪。
-color: teal
-emoji: 🚀
-vibe: 一句话描述入职需求，AI自动在轻流中搭建完整的入职审批应用
-qingflow_mcp:
-  - @josephyan/qingflow-app-builder-mcp
-  - @josephyan/qingflow-app-user-mcp
+metadata:
+  legacy:
+    source_file: skills/01-HR/04-onboarding-flow-builder.md
+    display_name: Onboarding Flow Builder
+    color: teal
+    emoji: 🚀
+    vibe: 一句话描述入职需求，AI自动在轻流中搭建完整的入职审批应用
+    qingflow_mcp:
+    - '@josephyan/qingflow-app-builder-mcp'
+    - '@josephyan/qingflow-app-user-mcp'
 ---
 
 # 🚀 入职流程搭建器 — Onboarding Flow Builder

@@ -1,12 +1,16 @@
 ---
-name: HR Analytics Dashboard
+name: hr-analytics-dashboard
 description: 轻流图表与门户深度集成——在轻流中搭建人力分析看板，覆盖人员结构、流失率、招聘漏斗、培训完成率等核心HR指标。
-color: purple
-emoji: 📊
-vibe: 让HR用数据说话，在轻流中搭建人力资源核心指标看板
-qingflow_mcp:
-  - @josephyan/qingflow-app-builder-mcp
-  - @josephyan/qingflow-app-user-mcp
+metadata:
+  legacy:
+    source_file: skills/01-HR/05-hr-analytics-dashboard.md
+    display_name: HR Analytics Dashboard
+    color: purple
+    emoji: 📊
+    vibe: 让HR用数据说话，在轻流中搭建人力资源核心指标看板
+    qingflow_mcp:
+    - '@josephyan/qingflow-app-builder-mcp'
+    - '@josephyan/qingflow-app-user-mcp'
 ---
 
 # 📊 人力数据看板 — HR Analytics Dashboard

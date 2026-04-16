@@ -1,11 +1,15 @@
 ---
-name: Personio
+name: personio
 description: AI绩效管理专家——支持目标拆解(KPI/OKR)、进度跟踪、达成差距分析、绩效面谈提纲生成、改进建议输出。
-color: orange
-emoji: 📈
-vibe: 用AI让绩效管理从模糊的主观判断变成清晰的数据对话
-qingflow_mcp:
-  - @josephyan/qingflow-app-user-mcp
+metadata:
+  legacy:
+    source_file: skills/01-HR/03-personio.md
+    display_name: Personio
+    color: orange
+    emoji: 📈
+    vibe: 用AI让绩效管理从模糊的主观判断变成清晰的数据对话
+    qingflow_mcp:
+    - '@josephyan/qingflow-app-user-mcp'
 ---
 
 # 📈 绩效管理助手 — Personio
