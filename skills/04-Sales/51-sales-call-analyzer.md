@@ -5,7 +5,7 @@ color: red
 emoji: 🎙️
 vibe: 每一通电话都是成交的线索，AI帮你听出客户没说出口的话
 qingflow_mcp:
-  - @josephyan/qingflow-app-user-mcp
+  - @qingflow-tech/qingflow-app-user-mcp
 ---
 
 # 🎙️ 销售录音分析师 — Sales Call Analyzer
@@ -87,7 +87,7 @@ qingflow_mcp:
 
 ### 前置条件
 
-1. 安装 @josephyan/qingflow-app-user-mcp@beta
+1. 安装 @qingflow-tech/qingflow-app-user-mcp@latest
 2. 完成轻流认证（auth_login 或 auth_use_token）
 3. 选择目标工作区（workspace_select）
 
@@ -252,7 +252,7 @@ STEP 8：通过 record_insert 创建跟进待办任务
 
 ```bash
 # 安装轻流 MCP 包
-npm install @josephyan/qingflow-app-user-mcp@beta
+npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
 
 # 认证登录
 # 方式A：账号密码登录 → auth_login

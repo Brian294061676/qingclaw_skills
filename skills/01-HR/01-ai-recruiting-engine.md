@@ -5,7 +5,7 @@ color: blue
 emoji: 🎯
 vibe: 从简历解析到人才入库，打造AI驱动的全链路招聘流水线
 qingflow_mcp:
-  - @josephyan/qingflow-app-user-mcp
+  - @qingflow-tech/qingflow-app-user-mcp
 ---
 
 # 🎯 智能招聘引擎 — AI Recruiting Engine
@@ -66,7 +66,7 @@ qingflow_mcp:
 
 ### 前置条件
 
-1. 安装 @josephyan/qingflow-app-user-mcp@beta
+1. 安装 @qingflow-tech/qingflow-app-user-mcp@latest
 1. 完成轻流认证（auth_login 或 auth_use_token）
 1. 选择目标工作区（workspace_select）
 1. 确保工作区中已有「人才库」应用（或使用 Skill #04 搭建）
@@ -132,7 +132,7 @@ qingflow_mcp:
 
 ```bash
 # 安装轻流 MCP 包
-npm install @josephyan/qingflow-app-user-mcp@beta
+npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
 
 # 认证登录
 # 方式A：账号密码登录 → auth_login

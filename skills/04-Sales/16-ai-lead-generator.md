@@ -5,7 +5,7 @@ color: blue
 emoji: 🔍
 vibe: 从一堆客户名单中淘出金子，给每条线索贴上意向标签和触达话术
 qingflow_mcp:
-  - @josephyan/qingflow-app-user-mcp
+  - @qingflow-tech/qingflow-app-user-mcp
 ---
 
 # 🔍 销售线索挖掘 — AI Lead Generator
@@ -52,7 +52,7 @@ qingflow_mcp:
 
 ### 前置条件
 
-1. 安装 @josephyan/qingflow-app-user-mcp@beta
+1. 安装 @qingflow-tech/qingflow-app-user-mcp@latest
 2. 完成轻流认证（auth_login 或 auth_use_token）
 3. 选择目标工作区（workspace_select）
 
@@ -103,7 +103,7 @@ qingflow_mcp:
 
 ```bash
 # 安装轻流 MCP 包
-npm install @josephyan/qingflow-app-user-mcp@beta
+npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
 
 # 认证登录
 # 方式A：账号密码登录 → auth_login

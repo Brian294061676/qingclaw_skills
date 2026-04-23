@@ -5,7 +5,7 @@ color: blue
 emoji: 📅
 vibe: 帮市场部规划整月内容排期，从选题到发布一站式管理
 qingflow_mcp:
-  - @josephyan/qingflow-app-builder-mcp
+  - @qingflow-tech/qingflow-app-builder-mcp
 ---
 
 # 📅 社媒内容日历 — Social Media Content Calendar
@@ -57,7 +57,7 @@ qingflow_mcp:
 
 ### 前置条件
 
-1. 安装 @josephyan/qingflow-app-builder-mcp@beta
+1. 安装 @qingflow-tech/qingflow-app-builder-mcp@latest
 2. 完成轻流认证（auth_login 或 auth_use_token）
 3. 选择目标工作区（workspace_select）
 
@@ -121,7 +121,7 @@ qingflow_mcp:
 
 ```bash
 # 安装轻流 MCP 包
-npm install @josephyan/qingflow-app-builder-mcp@beta
+npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 
 # 认证登录
 # 方式A：账号密码登录 → auth_login

@@ -63,7 +63,7 @@ vibe: 从培训需求到考核评估，AI驱动的一站式培训内容工厂
 ### 前置条件
 
 1. 本Skill以AI生成内容为主，不强制依赖轻流MCP
-1. 如需将培训材料存入轻流知识库，可安装 @josephyan/qingflow-app-user-mcp@beta
+1. 如需将培训材料存入轻流知识库，可安装 @qingflow-tech/qingflow-app-user-mcp@latest
 
 ### 典型操作流程
 

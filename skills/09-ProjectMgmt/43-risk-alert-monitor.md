@@ -5,8 +5,8 @@ color: red
 emoji: ⚠️
 vibe: 识别项目风险、评估影响、配置预警规则，让风险在萌芽时就被发现
 qingflow_mcp:
-  - @josephyan/qingflow-app-builder-mcp
-  - @josephyan/qingflow-app-user-mcp
+  - @qingflow-tech/qingflow-app-builder-mcp
+  - @qingflow-tech/qingflow-app-user-mcp
 ---
 
 # ⚠️ 项目风险预警器 — Risk Alert Monitor
@@ -53,8 +53,8 @@ qingflow_mcp:
 
 ### 前置条件
 
-1. 安装 @josephyan/qingflow-app-builder-mcp@beta
-1. 安装 @josephyan/qingflow-app-user-mcp@beta
+1. 安装 @qingflow-tech/qingflow-app-builder-mcp@latest
+1. 安装 @qingflow-tech/qingflow-app-user-mcp@latest
 2. 完成轻流认证（auth_login 或 auth_use_token）
 3. 选择目标工作区（workspace_select）
 
@@ -128,8 +128,8 @@ qingflow_mcp:
 
 ```bash
 # 安装轻流 MCP 包
-npm install @josephyan/qingflow-app-builder-mcp@beta
-npm install @josephyan/qingflow-app-user-mcp@beta
+npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
+npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
 
 # 认证登录
 # 方式A：账号密码登录 → auth_login
