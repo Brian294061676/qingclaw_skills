@@ -25,17 +25,17 @@
 
 | 包名 | 用途 | 安装命令 | 适用类型 |
 |------|------|---------|---------|
-| `@josephyan/qingflow-cli` | CLI 命令行工具（搭建 / 发布 / 调试） | `npm install @josephyan/qingflow-cli@beta` | Builder 类 Skill 的 CLI 辅助 |
-| `@josephyan/qingflow-app-user-mcp` | 运行态能力（数据读写 / 任务 / 分析 / 导入导出） | `npm install @josephyan/qingflow-app-user-mcp@beta` | 所有需要读写轻流数据的 Skill |
-| `@josephyan/qingflow-app-builder-mcp` | 搭建态能力（建模 / 流程 / 视图 / 图表 / 门户） | `npm install @josephyan/qingflow-app-builder-mcp@beta` | 所有 Builder 类（🏗️搭）Skill |
+| `@qingflow-tech/qingflow-cli` | CLI 命令行工具（搭建 / 发布 / 调试） | `npm install -g @qingflow-tech/qingflow-cli@latest` | Builder 类 Skill 的 CLI 辅助 |
+| `@qingflow-tech/qingflow-app-user-mcp` | 运行态能力（数据读写 / 任务 / 分析 / 导入导出） | `npm install -g @qingflow-tech/qingflow-app-user-mcp@latest` | 所有需要读写轻流数据的 Skill |
+| `@qingflow-tech/qingflow-app-builder-mcp` | 搭建态能力（建模 / 流程 / 视图 / 图表 / 门户） | `npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest` | 所有 Builder 类（🏗️搭）Skill |
 
 ### MCP 连接步骤
 
 ```bash
 # Step 1: 安装轻流 MCP 包
-npm install @josephyan/qingflow-cli@beta
-npm install @josephyan/qingflow-app-user-mcp@beta
-npm install @josephyan/qingflow-app-builder-mcp@beta
+npm install -g @qingflow-tech/qingflow-cli@latest
+npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
+npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 
 # Step 2: 认证登录（二选一）
 # 方式A：账号密码登录 → auth_login
@@ -243,11 +243,11 @@ skills/
 
 > 基于当前可直接调用的 MCP 工具整理，覆盖运行态 + Builder + CLI 全能力。
 
-### 一、@josephyan/qingflow-cli — CLI 命令行工具
+### 一、@qingflow-tech/qingflow-cli — CLI 命令行工具
 
 | 包名 | 用途 | 安装命令 | 适用 Skill 类型 |
 |------|------|---------|----------------|
-| `@josephyan/qingflow-cli` | CLI 命令行工具，支持搭建 / 发布 / 调试 | `npm install @josephyan/qingflow-cli@beta` | Builder 类 Skill 的 CLI 辅助 |
+| `@qingflow-tech/qingflow-cli` | CLI 命令行工具，支持搭建 / 发布 / 调试 | `npm install -g @qingflow-tech/qingflow-cli@latest` | Builder 类 Skill 的 CLI 辅助 |
 
 | 能力 | 说明 |
 |------|------|
@@ -257,12 +257,12 @@ skills/
 
 ---
 
-### 二、@josephyan/qingflow-app-user-mcp — 运行态能力
+### 二、@qingflow-tech/qingflow-app-user-mcp — 运行态能力
 
 面向数据读写、任务处理、分析统计、导入导出等日常运行场景。
 
 ```bash
-npm install @josephyan/qingflow-app-user-mcp@beta
+npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
 ```
 
 #### 2.1 认证与工作区
@@ -358,12 +358,12 @@ npm install @josephyan/qingflow-app-user-mcp@beta
 
 ---
 
-### 三、@josephyan/qingflow-app-builder-mcp — 搭建态能力
+### 三、@qingflow-tech/qingflow-app-builder-mcp — 搭建态能力
 
 面向应用建模、流程配置、视图图表、门户发布等搭建场景。
 
 ```bash
-npm install @josephyan/qingflow-app-builder-mcp@beta
+npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 ```
 
 #### 3.1 认证与工作区
