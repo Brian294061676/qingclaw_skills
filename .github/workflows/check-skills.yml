@@ -1,0 +1,25 @@
+name: check-skills
+
+on:
+  push:
+    paths:
+      - 'skills/**'
+      - 'README.md'
+      - '.github/scripts/check_skills.py'
+      - '.github/workflows/check-skills.yml'
+  pull_request:
+    paths:
+      - 'skills/**'
+      - 'README.md'
+      - '.github/scripts/check_skills.py'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: 校验 Skills 一致性
+        run: python .github/scripts/check_skills.py
