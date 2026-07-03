@@ -1,8 +1,8 @@
-# QingClaw Skills — 轻流 51 Skills
+# QingClaw Skills — 轻流 62 Skills
 
 > AI Agent + 无代码平台 · 企业智能化解决方案
 
-以 [QingClaw](https://qingflow.com/qing-claw/)的 AI Agent 能力 + [轻流 10.0](https://qingclaw.oalite.com/)「搭·问·析·生·联」五大 AI 能力矩阵，覆盖企业 **10 大业务领域 51 个 Skills**，形成 "AI 生成 + 无代码搭建 + 数据驱动 + 流程自动化" 的完整智能闭环。
+以 [QingClaw](https://qingflow.com/qing-claw/) 的 AI Agent 能力 + [轻流 10.0](https://qingclaw.oalite.com/)「搭·问·析·生·联」五大 AI 能力矩阵，覆盖企业 **12 大业务领域 62 个 Skills**，形成 "AI 生成 + 无代码搭建 + 数据驱动 + 流程自动化" 的完整智能闭环。
 
 **相关链接**：[QingClaw 客户端下载](https://qingflow.com/qing-claw/) | [轻流官网](https://qingflow.com) | [轻流 10.0 介绍](https://qingclaw.oalite.com/) | [Skills 介绍](https://qingclawskills.lovable.app)
 
@@ -12,12 +12,12 @@
 
 | 标签 | 能力维度 | 说明 | 覆盖 Skills | 占比 |
 |------|---------|------|------------|------|
-| 📝 生 | AI 内容生成 | AI 生成文案 / 报告 / 方案 | 35 | 70% |
-| 📊 析 | 智能分析 | 数据读取 / 分析 / 洞察 | 32 | 64% |
-| 🏗️ 搭 | AI 搭建 | 自然语言建表单 / 应用 / 页面 | 20 | 40% |
-| ⚡ 联 | 流程联动 | 流程自动化 / 任务执行 / 外部集成 | 19 | 38% |
-| 👥 问 | 组织知识 | 人员目录 / 知识库 / 智能问答 | 10 | 20% |
-| 📦 导入导出 | 批量数据 | 批量数据处理 | 3 | 6% |
+| 📝 生 | AI 内容生成 | AI 生成文案 / 报告 / 方案 | 47 | 76% |
+| 📊 析 | 智能分析 | 数据读取 / 分析 / 洞察 | 44 | 71% |
+| 🏗️ 搭 | AI 搭建 | 自然语言建表单 / 应用 / 页面 | 20 | 32% |
+| ⚡ 联 | 流程联动 | 流程自动化 / 任务执行 / 外部集成 | 31 | 50% |
+| 👥 问 | 组织知识 | 人员目录 / 知识库 / 智能问答 | 10 | 16% |
+| 📦 导入导出 | 批量数据 | 批量数据处理 | 3 | 5% |
 
 ---
 
@@ -25,26 +25,22 @@
 
 | 包名 | 用途 | 安装命令 | 适用类型 |
 |------|------|---------|---------|
-| `@qingflow-tech/qingflow-cli` | CLI 命令行工具（搭建 / 发布 / 调试） | `npm install -g @qingflow-tech/qingflow-cli@latest` | Builder 类 Skill 的 CLI 辅助 |
-| `@qingflow-tech/qingflow-app-user-mcp` | 运行态能力（数据读写 / 任务 / 分析 / 导入导出） | `npm install -g @qingflow-tech/qingflow-app-user-mcp@latest` | 所有需要读写轻流数据的 Skill |
-| `@qingflow-tech/qingflow-app-builder-mcp` | 搭建态能力（建模 / 流程 / 视图 / 图表 / 门户） | `npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest` | 所有 Builder 类（🏗️搭）Skill |
+| `@qingflow-tech/qingflow-cli` | CLI 命令行工具（搭建 / 发布 / 调试） | `npm install @qingflow-tech/qingflow-cli` | Builder 类 Skill 的 CLI 辅助 |
+| `@qingflow-tech/qingflow-app-user-mcp` | 运行态能力（数据读写 / 任务 / 分析 / 导入导出） | `npm install @qingflow-tech/qingflow-app-user-mcp` | 所有需要读写轻流数据的 Skill |
+| `@qingflow-tech/qingflow-app-builder-mcp` | 搭建态能力（建模 / 流程 / 视图 / 图表 / 门户） | `npm install @qingflow-tech/qingflow-app-builder-mcp` | 所有 Builder 类（🏗️搭）Skill |
 
 ### MCP 连接步骤
 
 ```bash
 # Step 1: 安装轻流 MCP 包
-npm install -g @qingflow-tech/qingflow-cli@latest
-npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
-npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
+npm install @qingflow-tech/qingflow-cli
+npm install @qingflow-tech/qingflow-app-user-mcp
+npm install @qingflow-tech/qingflow-app-builder-mcp
 
-# Step 2: 认证登录（二选一）
-# 方式A：账号密码登录 → auth_login
-# 方式B：Token 接入 → auth_use_token
+# Step 2: 凭证接入（推荐 auth_use_credential，自动解析 token / wsId / qfVersion）
+# auth_use_credential → 工作区自动绑定，无需手动 workspace_select
 
-# Step 3: 选择工作区
-# workspace_list → workspace_select
-
-# Step 4: 验证连接
+# Step 3: 验证连接
 # auth_whoami → 确认身份和工作区
 ```
 
@@ -52,11 +48,11 @@ npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 
 ## Skill 安装方式
 
-将对应的 `.md` 文件直接发送给 OpenClaw（小龙虾）即可安装使用。每个 Skill 均为独立的 Markdown 文件，包含完整的身份定义、能力描述和使用指令。
+将对应的 `.md` 文件直接发送给 QingClaw（小龙虾）即可安装使用。每个 Skill 均为独立的 Markdown 文件，包含完整的身份定义、能力描述和使用指令。
 
 ---
 
-## 51 Skills 总览
+## 62 Skills 总览
 
 ### 一、人力资源 (HR)
 
@@ -76,7 +72,7 @@ npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 
 ### 二、财务管理 (Finance)
 
-> 覆盖报销、分析、应收应付、预算、发票全场景，AI 让财务从核算型走向分析型
+> 覆盖报销、分析、应收应付、预算、发票、回款预测全场景，AI 让财务从核算型走向分析型
 
 | # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
 |---|-----------|---------|---------|---------|
@@ -85,14 +81,15 @@ npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 | 08 | 应收应付管理 (Xero) | 账款汇总→账期管理→异常核查→催款话术→对账跟进 | 📝📊 | app-user-mcp |
 | 09 | 预算编制助手 (Budget Planner) | 预算模板搭建→历史对比→审批流程→执行偏差预警→分析报告 | 📝📊🏗️⚡ | app-builder + app-user |
 | 10 | 发票处理中心 (Invoice Processor) | 发票OCR识别→进销项匹配→税率校验→台账管理→自动入库 | 📊📦⚡ | app-user-mcp |
+| 56 | 回款预测 (Collection Forecast) | 回款计划跟踪→逾期风险预测→催收策略→财务协同→状态回写 | 📝📊⚡ | app-user-mcp |
 
-**协作链路**：`10 发票处理 → 06 报销审核 → 09 预算助手 → 07 财务分析 → 08 应收应付`
+**协作链路**：`10 发票处理 → 06 报销审核 → 09 预算助手 → 07 财务分析 → 08 应收应付 → 56 回款预测`
 
 ---
 
 ### 三、运营管理 (Operations)
 
-> 覆盖数据分析、活动策划、用户反馈、SOP 管理、运营看板全链路
+> 覆盖数据分析、活动策划、用户反馈、SOP 管理、运营看板、流程诊断、经营汇报全链路
 
 | # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
 |---|-----------|---------|---------|---------|
@@ -101,14 +98,16 @@ npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 | 13 | 用户反馈分析师 (Review Summarizer) | 反馈归集→问题分类→情绪判断→优先级排序→优化建议 | 📝📊 | app-user-mcp |
 | 14 | 运营SOP生成器 (Automation Workflows) | 流程拆解→SOP模板→检查清单→风险标记→轻流流程落地 | 📝🏗️⚡ | app-builder + app-user |
 | 15 | 运营看板搭建器 (KPI Dashboard Builder) | 看板设计→图表搭建→门户发布→数据分析→摘要读取 | 🏗️📊 | app-builder + app-user |
+| 61 | 流程诊断 (Process Diagnostics) | 流程效率分析→卡点节点识别→超时预警→协同优化建议→结果回写 | 📝📊⚡ | app-user-mcp |
+| 62 | 经营报告 (Business Report) | 经营数据汇总→周报/月报生成→经营趋势分析→改进事项跟踪 | 📝📊 | app-user-mcp |
 
-**协作链路**：`11 数据分析 → 13 反馈分析 → 12 活动方案 → 14 SOP生成 → 15 看板搭建`
+**协作链路**：`11 数据分析 → 13 反馈分析 → 12 活动方案 → 14 SOP生成 → 15 看板搭建 → 61 流程诊断 → 62 经营报告`
 
 ---
 
 ### 四、销售管理 (Sales)
 
-> 覆盖线索挖掘、客户跟进、方案生成、CRM 搭建、赢输分析、录音分析全流程
+> 覆盖线索挖掘、客户画像、客户跟进、方案生成、CRM 搭建、赢输分析、录音分析全流程
 
 | # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
 |---|-----------|---------|---------|---------|
@@ -118,14 +117,15 @@ npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 | 19 | 客户管理系统搭建器 (CRM App Builder) | 一键搭建完整CRM（客户/商机/跟进/合同/销售漏斗看板） | 🏗️📊⚡👥 | app-builder + app-user |
 | 20 | 赢输单分析师 (Win-Loss Analyzer) | 成交/丢单原因归纳→竞品对比→策略建议→经验沉淀 | 📝📊 | app-user-mcp |
 | 51 | 销售录音分析师 (Sales Call Analyzer) | 录音转写→话术评估→客户意向分析→关键信息提取→改进建议→数据回写 | 📝📊⚡ | app-user-mcp |
+| 55 | 客户画像 (Customer Profile) | 客户信息建档→需求标签识别→销售准备材料→画像数据同步CRM | 📝📊⚡ | app-user-mcp |
 
-**协作链路**：`16 线索挖掘 → 19 CRM搭建 → 17 跟进管理 → 51 录音分析 → 18 方案生成 → 20 赢输分析`
+**协作链路**：`16 线索挖掘 → 19 CRM搭建 → 55 客户画像 → 17 跟进管理 → 51 录音分析 → 18 方案生成 → 20 赢输分析`
 
 ---
 
 ### 五、市场营销 (Marketing)
 
-> 覆盖内容生成、社媒管理、市场调研、SEO 优化、ROI 分析全链路
+> 覆盖内容生成、社媒管理、市场调研、SEO 优化、ROI 分析、AI 搜索诊断全链路
 
 | # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
 |---|-----------|---------|---------|---------|
@@ -134,8 +134,9 @@ npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 | 23 | 市场调研分析师 (Competitive Intelligence) | 竞品归集→差异提炼→用户洞察→机会分析→调研结论 | 📝📊 | app-user-mcp |
 | 24 | SEO内容优化师 (SEO Content Optimizer) | 关键词分析→标题优化→内容结构→元数据生成→策略建议 | 📝 | - |
 | 25 | 活动ROI分析师 (Campaign ROI Analyzer) | 投放数据归集→ROI计算→渠道对比→优化建议→轻流看板 | 📝📊🏗️ | app-builder + app-user |
+| 60 | AI搜索诊断 (AI Search Diagnostics) | 品牌提及监测→推荐排名分析→问答覆盖诊断→GEO优化策略 | 📝📊 | app-user-mcp |
 
-**协作链路**：`23 市场调研 → 21 内容生成 → 24 SEO优化 → 22 内容日历 → 25 ROI分析`
+**协作链路**：`23 市场调研 → 21 内容生成 → 24 SEO优化 → 60 AI搜索诊断 → 22 内容日历 → 25 ROI分析`
 
 ---
 
@@ -219,20 +220,50 @@ npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 
 ---
 
+### 十一、生产制造 (Manufacturing)
+
+> 覆盖智能排产、产能优化、交付预测全场景，AI 赋能制造业从经验排产走向数据驱动
+
+| # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
+|---|-----------|---------|---------|---------|
+| 52 | 智能排产 (Smart Production Scheduler) | 订单排程编排→产能分配优化→计划冲突检测→插单影响分析→回写轻流 | 📝📊⚡ | app-user-mcp |
+| 53 | 交付预测 (Delivery Prediction) | 订单进度跟踪→延期风险预测→延期原因分析→交付调整建议→风险回写 | 📝📊⚡ | app-user-mcp |
+| 54 | 产能优化 (Capacity Optimization) | 设备负荷分析→瓶颈工序识别→班组调度优化→产能提升方案→分析回写 | 📝📊⚡ | app-user-mcp |
+
+**协作链路**：`52 智能排产 → 54 产能优化 → 53 交付预测`
+
+---
+
+### 十二、供应链 (SupplyChain)
+
+> 覆盖需求预测、供应商履约、询价比价全场景，AI 让供应链从被动响应走向主动预测
+
+| # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
+|---|-----------|---------|---------|---------|
+| 57 | 需求预测 (Demand Forecast) | 历史需求分析→需求量预测→缺货风险识别→补货建议→预测回写 | 📝📊⚡ | app-user-mcp |
+| 58 | 履约预测 (Supplier Fulfillment) | 交期跟踪管理→延期风险预测→交付影响分析→应对措施建议→风险回写 | 📝📊⚡ | app-user-mcp |
+| 59 | 询价比价 (Quotation Comparison) | 报价汇总整理→多维度比价→TCO总拥有成本分析→采购决策建议→比价回写 | 📝📊⚡ | app-user-mcp |
+
+**协作链路**：`57 需求预测 → 58 履约预测 → 59 询价比价`
+
+---
+
 ## 目录结构
 
 ```
 skills/
 ├── 01-HR/                  # 人力资源（5 Skills）
-├── 02-Finance/             # 财务管理（5 Skills）
-├── 03-Operations/          # 运营管理（5 Skills）
-├── 04-Sales/               # 销售管理（6 Skills）
-├── 05-Marketing/           # 市场营销（5 Skills）
+├── 02-Finance/             # 财务管理（6 Skills）
+├── 03-Operations/          # 运营管理（7 Skills）
+├── 04-Sales/               # 销售管理（7 Skills）
+├── 05-Marketing/           # 市场营销（6 Skills）
 ├── 06-Engineering/         # 技术研发（5 Skills）
 ├── 07-Product/             # 产品管理（5 Skills）
 ├── 08-Legal/               # 法务合规（5 Skills）
 ├── 09-ProjectMgmt/         # 项目管理（5 Skills）
-└── 10-AdminIT/             # 行政与IT（5 Skills）
+├── 10-AdminIT/             # 行政与IT（5 Skills）
+├── 11-Manufacturing/       # 生产制造（3 Skills）
+└── 12-SupplyChain/         # 供应链（3 Skills）
 ```
 
 每个 Skill 以独立 Markdown 文件呈现，包含：身份定义、能力描述、Prompt 模板、轻流能力标签、MCP 依赖、协作链路等完整信息。
@@ -247,12 +278,12 @@ skills/
 
 | 包名 | 用途 | 安装命令 | 适用 Skill 类型 |
 |------|------|---------|----------------|
-| `@qingflow-tech/qingflow-cli` | CLI 命令行工具，支持搭建 / 发布 / 调试 | `npm install -g @qingflow-tech/qingflow-cli@latest` | Builder 类 Skill 的 CLI 辅助 |
+| `@qingflow-tech/qingflow-cli` | CLI 命令行工具，支持搭建 / 发布 / 调试 | `npm install @qingflow-tech/qingflow-cli` | Builder 类 Skill 的 CLI 辅助 |
 
 | 能力 | 说明 |
 |------|------|
-| 认证登录 | 支持账号密码 / Token 两种方式完成认证 |
-| 工作区切换 | 列出并选择目标工作区 |
+| 认证登录 | 推荐使用 `auth_use_credential` 凭证接入，自动解析 token / wsId / qfVersion |
+| 工作区切换 | 自动绑定工作区，必要时用 `workspace_select` 切换 |
 | 应用调试 | 配合 Builder MCP 完成建模、发布、校验流程 |
 
 ---
@@ -262,26 +293,25 @@ skills/
 面向数据读写、任务处理、分析统计、导入导出等日常运行场景。
 
 ```bash
-npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
+npm install @qingflow-tech/qingflow-app-user-mcp
 ```
 
 #### 2.1 认证与工作区
 
 | 工具 | 说明 |
 |------|------|
-| `auth_login` | 账号密码登录 |
+| `auth_use_credential` | 凭证接入（推荐，自动解析 token / wsId / qfVersion） |
 | `auth_logout` | 退出当前登录态 |
-| `auth_use_token` | Token 接入 |
 | `auth_whoami` | 查看当前身份与工作区 |
 | `workspace_list` | 列出可用工作区 |
 | `workspace_select` | 切换到目标工作区 |
+| `workspace_get` | 获取当前工作区详情 |
 
 #### 2.2 应用与门户读取
 
 | 工具 | 说明 |
 |------|------|
 | `app_list` | 列出所有应用 |
-| `app_search` | 按关键字搜索应用 |
 | `app_get` | 获取单个应用详情 |
 | `view_get` | 读取视图配置 |
 | `chart_get` | 读取图表配置 |
@@ -292,13 +322,9 @@ npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
 
 | 工具 | 说明 |
 |------|------|
-| `directory_list_internal_departments` | 列出内部部门 |
-| `directory_list_sub_departments` | 列出子部门 |
-| `directory_list_all_departments` | 获取全量部门树 |
-| `directory_list_internal_users` | 列出内部成员 |
-| `directory_list_all_internal_users` | 获取全量内部成员 |
-| `directory_list_external_members` | 列出外部联系人 |
-| `directory_search` | 统一目录搜索 |
+| `directory_search` | 统一目录搜索（部门 / 成员 / 外部联系人） |
+| `record_member_candidates` | 获取成员字段候选范围 |
+| `record_department_candidates` | 获取部门字段候选范围 |
 
 #### 2.4 记录 CRUD
 
@@ -306,25 +332,27 @@ npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
 |------|------|
 | `record_get` | 读取单条记录 |
 | `record_list` | 列表浏览记录 |
+| `record_access` | 基于视图的数据访问 |
 | `record_insert` | 新增记录 |
 | `record_update` | 更新记录 |
 | `record_delete` | 删除记录 |
 | `record_browse_schema_get` | 浏览字段 schema |
 | `record_insert_schema_get` | 获取新增 schema |
 | `record_update_schema_get` | 获取更新 schema |
-| `record_member_candidates` | 获取成员字段候选范围 |
-| `record_department_candidates` | 获取部门字段候选范围 |
 
 #### 2.5 记录分析
 
 | 工具 | 说明 |
 |------|------|
-| `record_analyze` | 基于字段 schema 的分析型查询，支持分组、聚合、统计、排序、筛选 |
+| `record_access` | 基于字段 schema 的分析型查询，支持分组、聚合、统计、排序、筛选 |
 
 #### 2.6 导入与导出
 
 | 工具 | 说明 |
 |------|------|
+| `record_export_start` | 启动导出任务 |
+| `record_export_status_get` | 查询导出状态 |
+| `record_export_direct` | 直接导出 |
 | `record_import_template_get` | 获取导入模板 |
 | `record_import_schema_get` | 获取导入 schema |
 | `record_import_verify` | 导入数据校验 |
@@ -363,16 +391,18 @@ npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
 面向应用建模、流程配置、视图图表、门户发布等搭建场景。
 
 ```bash
-npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
+npm install @qingflow-tech/qingflow-app-builder-mcp
 ```
 
 #### 3.1 认证与工作区
 
 | 工具 | 说明 |
 |------|------|
-| `auth_login` | Builder 侧账号登录 |
-| `auth_use_token` | Builder 侧 Token 接入 |
-| `workspace_select` | Builder 侧工作区切换 |
+| `auth_use_credential` | Builder 侧凭证接入 |
+| `auth_logout` | Builder 侧退出登录 |
+| `auth_whoami` | Builder 侧查看身份 |
+| `workspace_list` | Builder 侧列出工作区 |
+| `workspace_select` | Builder 侧切换工作区 |
 
 #### 3.2 应用建模
 
@@ -393,10 +423,11 @@ npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 | `portal_apply` | 创建 / 更新门户 |
 | `portal_get` | 读取门户详情 |
 | `portal_list` | 列出门户 |
-| `package_create` | 创建解决方案包 |
+| `portal_delete` | 删除门户 |
+| `package_apply` | 创建 / 更新解决方案包 |
 | `package_list` | 列出解决方案包 |
-| `package_resolve` | 按名称解析包 |
-| `package_attach_app` | 将应用挂载到解决方案包 |
+| `package_get` | 读取解决方案包详情 |
+| `solution_install` | 安装打包的解决方案 / 模板 |
 
 #### 3.4 角色与权限
 
@@ -410,13 +441,21 @@ npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
 
 | 工具 | 说明 |
 |------|------|
-| `app_custom_button_create` | 创建自定义按钮 |
-| `app_custom_button_update` | 更新自定义按钮 |
+| `builder_tool_contract` | 查询工具契约（别名、枚举、最小示例） |
+| `app_custom_buttons_apply` | 创建 / 更新自定义按钮 |
+| `button_style_catalog_get` | 查询按钮样式目录 |
 | `app_repair_code_blocks` | 修复代码块配置 |
 | `app_release_edit_lock_if_mine` | 释放发布编辑锁 |
+| `app_get_fields` | 读取字段配置 |
+| `app_get_layout` | 读取布局配置 |
 | `app_get_views` | 读取视图配置 |
 | `app_get_charts` | 读取图表配置 |
-| `builder.file_upload_local` | Builder 侧上传本地文件 |
+| `app_get_flow` / `app_flow_get` | 读取流程配置 |
+| `app_flow_get_schema` | 读取流程 schema |
+| `app_associated_resources_apply` | 关联资源应用 |
+| `workspace_icon_catalog_get` | 查询工作区图标 / 颜色目录 |
+| `feedback_submit` | 提交反馈（无需登录） |
+| `file_upload_local` | Builder 侧上传本地文件 |
 
 ---
 
@@ -440,4 +479,4 @@ MIT
 
 ---
 
-> **OpenClaw × 轻流 — 让每个企业都拥有智能化的工作方式**
+> **QingClaw × 轻流 — 让每个企业都拥有智能化的工作方式**
