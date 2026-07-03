@@ -1,8 +1,8 @@
-# QingClaw Skills — 轻流 62 Skills
+# QingClaw Skills — 轻流 68 Skills
 
 > AI Agent + 无代码平台 · 企业智能化解决方案
 
-以 [QingClaw](https://qingflow.com/qing-claw/) 的 AI Agent 能力 + [轻流 10.0](https://qingclaw.oalite.com/)「搭·问·析·生·联」五大 AI 能力矩阵，覆盖企业 **12 大业务领域 62 个 Skills**，形成 "AI 生成 + 无代码搭建 + 数据驱动 + 流程自动化" 的完整智能闭环。
+以 [QingClaw](https://qingflow.com/qing-claw/) 的 AI Agent 能力 + [轻流 10.0](https://qingclaw.oalite.com/)「搭·问·析·生·联」五大 AI 能力矩阵，覆盖企业 **12 大业务领域 68 个 Skills**，形成 "AI 生成 + 无代码搭建 + 数据驱动 + 流程自动化" 的完整智能闭环。
 
 **相关链接**：[QingClaw 客户端下载](https://qingflow.com/qing-claw/) | [轻流官网](https://qingflow.com) | [轻流 10.0 介绍](https://qingclaw.oalite.com/) | [Skills 介绍](https://qingclawskills.lovable.app)
 
@@ -12,12 +12,12 @@
 
 | 标签 | 能力维度 | 说明 | 覆盖 Skills | 占比 |
 |------|---------|------|------------|------|
-| 📝 生 | AI 内容生成 | AI 生成文案 / 报告 / 方案 | 47 | 76% |
-| 📊 析 | 智能分析 | 数据读取 / 分析 / 洞察 | 44 | 71% |
-| 🏗️ 搭 | AI 搭建 | 自然语言建表单 / 应用 / 页面 | 20 | 32% |
-| ⚡ 联 | 流程联动 | 流程自动化 / 任务执行 / 外部集成 | 31 | 50% |
-| 👥 问 | 组织知识 | 人员目录 / 知识库 / 智能问答 | 10 | 16% |
-| 📦 导入导出 | 批量数据 | 批量数据处理 | 3 | 5% |
+| 📝 生 | AI 内容生成 | AI 生成文案 / 报告 / 方案 | 51 | 75% |
+| 📊 析 | 智能分析 | 数据读取 / 分析 / 洞察 | 49 | 72% |
+| 🏗️ 搭 | AI 搭建 | 自然语言建表单 / 应用 / 页面 | 22 | 32% |
+| ⚡ 联 | 流程联动 | 流程自动化 / 任务执行 / 外部集成 | 33 | 49% |
+| 👥 问 | 组织知识 | 人员目录 / 知识库 / 智能问答 | 9 | 13% |
+| 📦 导入导出 | 批量数据 | 批量数据处理 | 5 | 7% |
 
 ---
 
@@ -52,11 +52,11 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 
 ---
 
-## 62 Skills 总览
+## 68 Skills 总览
 
 ### 一、人力资源 (HR)
 
-> 覆盖招聘、培训、绩效、入职、人力分析全流程，AI 赋能 HR 从事务型向战略型转变
+> 覆盖招聘、培训、绩效、入职、人力分析、薪酬分析全流程，AI 赋能 HR 从事务型向战略型转变
 
 | # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
 |---|-----------|---------|---------|---------|
@@ -65,14 +65,15 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 | 03 | 绩效管理助手 (Personio) | 目标拆解(KPI/OKR)→进度跟踪→达成差距分析→面谈提纲 | 📝📊 | app-user-mcp |
 | 04 | 入职流程搭建器 (Onboarding Flow Builder) | 一键搭建入职审批应用（材料收集→审批→任务清单→试用期跟踪） | 🏗️⚡👥 | app-builder + app-user |
 | 05 | 人力数据看板 (HR Analytics Dashboard) | 搭建人力分析看板（人员结构/流失率/招聘漏斗/培训完成率） | 🏗️📊 | app-builder + app-user |
+| 68 | 薪酬分析 (Compensation Analytics) | 薪酬结构分析→市场对标→内部公平性诊断→人力成本预测→结果回写 | 📝📊⚡ | app-user-mcp |
 
-**协作链路**：`01 招聘引擎 → 04 入职搭建器 → 02 培训设计师 → 03 绩效助手 → 05 人力看板`
+**协作链路**：`01 招聘引擎 → 04 入职搭建器 → 02 培训设计师 → 03 绩效助手 → 05 人力看板 → 68 薪酬分析`
 
 ---
 
 ### 二、财务管理 (Finance)
 
-> 覆盖报销、分析、应收应付、预算、发票、回款预测全场景，AI 让财务从核算型走向分析型
+> 覆盖报销、分析、应收应付、预算、发票、回款预测、SOX 审计全场景，AI 让财务从核算型走向分析型
 
 | # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
 |---|-----------|---------|---------|---------|
@@ -82,14 +83,15 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 | 09 | 预算编制助手 (Budget Planner) | 预算模板搭建→历史对比→审批流程→执行偏差预警→分析报告 | 📝📊🏗️⚡ | app-builder + app-user |
 | 10 | 发票处理中心 (Invoice Processor) | 发票OCR识别→进销项匹配→税率校验→台账管理→自动入库 | 📊📦⚡ | app-user-mcp |
 | 56 | 回款预测 (Collection Forecast) | 回款计划跟踪→逾期风险预测→催收策略→财务协同→状态回写 | 📝📊⚡ | app-user-mcp |
+| 65 | SOX审计助手 (SOX Audit Assistant) | 控制测试设计→样本选取→工作底稿生成→缺陷评级→审计回写 | 📝📊⚡ | app-user-mcp |
 
-**协作链路**：`10 发票处理 → 06 报销审核 → 09 预算助手 → 07 财务分析 → 08 应收应付 → 56 回款预测`
+**协作链路**：`10 发票处理 → 06 报销审核 → 09 预算助手 → 07 财务分析 → 08 应收应付 → 56 回款预测 → 65 SOX审计`
 
 ---
 
 ### 三、运营管理 (Operations)
 
-> 覆盖数据分析、活动策划、用户反馈、SOP 管理、运营看板、流程诊断、经营汇报全链路
+> 覆盖数据分析、活动策划、用户反馈、SOP 管理、运营看板、流程诊断、经营汇报、智能客服、数据质量全链路
 
 | # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
 |---|-----------|---------|---------|---------|
@@ -100,8 +102,10 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 | 15 | 运营看板搭建器 (KPI Dashboard Builder) | 看板设计→图表搭建→门户发布→数据分析→摘要读取 | 🏗️📊 | app-builder + app-user |
 | 61 | 流程诊断 (Process Diagnostics) | 流程效率分析→卡点节点识别→超时预警→协同优化建议→结果回写 | 📝📊⚡ | app-user-mcp |
 | 62 | 经营报告 (Business Report) | 经营数据汇总→周报/月报生成→经营趋势分析→改进事项跟踪 | 📝📊 | app-user-mcp |
+| 63 | 智能客服 (Smart Customer Service) | 工单智能分类→自动回复生成→转人工判断→满意度跟踪→回写 | 📝📊⚡ | app-user-mcp |
+| 64 | 数据质量检测 (Data Quality Inspector) | 字段缺失率扫描→异常值检测→重复数据识别→治理建议→回写 | 📝📊⚡ | app-user-mcp |
 
-**协作链路**：`11 数据分析 → 13 反馈分析 → 12 活动方案 → 14 SOP生成 → 15 看板搭建 → 61 流程诊断 → 62 经营报告`
+**协作链路**：`11 数据分析 → 13 反馈分析 → 12 活动方案 → 14 SOP生成 → 15 看板搭建 → 61 流程诊断 → 62 经营报告 → 63 智能客服 → 64 数据质量`
 
 ---
 
@@ -222,29 +226,31 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 
 ### 十一、生产制造 (Manufacturing)
 
-> 覆盖智能排产、产能优化、交付预测全场景，AI 赋能制造业从经验排产走向数据驱动
+> 覆盖智能排产、产能优化、交付预测、质量管控全场景，AI 赋能制造业从经验排产走向数据驱动
 
 | # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
 |---|-----------|---------|---------|---------|
 | 52 | 智能排产 (Smart Production Scheduler) | 订单排程编排→产能分配优化→计划冲突检测→插单影响分析→回写轻流 | 📝📊⚡ | app-user-mcp |
 | 53 | 交付预测 (Delivery Prediction) | 订单进度跟踪→延期风险预测→延期原因分析→交付调整建议→风险回写 | 📝📊⚡ | app-user-mcp |
 | 54 | 产能优化 (Capacity Optimization) | 设备负荷分析→瓶颈工序识别→班组调度优化→产能提升方案→分析回写 | 📝📊⚡ | app-user-mcp |
+| 67 | 质量管控 (Quality Control) | 来料检验管理→过程巡检分析→不良根因分析→CAPA整改闭环→质量回写 | 📝📊⚡ | app-user-mcp |
 
-**协作链路**：`52 智能排产 → 54 产能优化 → 53 交付预测`
+**协作链路**：`52 智能排产 → 54 产能优化 → 53 交付预测 → 67 质量管控`
 
 ---
 
 ### 十二、供应链 (SupplyChain)
 
-> 覆盖需求预测、供应商履约、询价比价全场景，AI 让供应链从被动响应走向主动预测
+> 覆盖需求预测、供应商履约、询价比价、库存优化全场景，AI 让供应链从被动响应走向主动预测
 
 | # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
 |---|-----------|---------|---------|---------|
 | 57 | 需求预测 (Demand Forecast) | 历史需求分析→需求量预测→缺货风险识别→补货建议→预测回写 | 📝📊⚡ | app-user-mcp |
 | 58 | 履约预测 (Supplier Fulfillment) | 交期跟踪管理→延期风险预测→交付影响分析→应对措施建议→风险回写 | 📝📊⚡ | app-user-mcp |
 | 59 | 询价比价 (Quotation Comparison) | 报价汇总整理→多维度比价→TCO总拥有成本分析→采购决策建议→比价回写 | 📝📊⚡ | app-user-mcp |
+| 66 | 库存优化 (Inventory Optimization) | 安全库存测算→补货建议生成→ABC分类管理→库存周转分析→优化回写 | 📝📊⚡ | app-user-mcp |
 
-**协作链路**：`57 需求预测 → 58 履约预测 → 59 询价比价`
+**协作链路**：`57 需求预测 → 58 履约预测 → 59 询价比价 → 66 库存优化`
 
 ---
 
@@ -252,9 +258,9 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 
 ```
 skills/
-├── 01-HR/                  # 人力资源（5 Skills）
-├── 02-Finance/             # 财务管理（6 Skills）
-├── 03-Operations/          # 运营管理（7 Skills）
+├── 01-HR/                  # 人力资源（6 Skills）
+├── 02-Finance/             # 财务管理（7 Skills）
+├── 03-Operations/          # 运营管理（9 Skills）
 ├── 04-Sales/               # 销售管理（7 Skills）
 ├── 05-Marketing/           # 市场营销（6 Skills）
 ├── 06-Engineering/         # 技术研发（5 Skills）
@@ -262,11 +268,11 @@ skills/
 ├── 08-Legal/               # 法务合规（5 Skills）
 ├── 09-ProjectMgmt/         # 项目管理（5 Skills）
 ├── 10-AdminIT/             # 行政与IT（5 Skills）
-├── 11-Manufacturing/       # 生产制造（3 Skills）
-└── 12-SupplyChain/         # 供应链（3 Skills）
+├── 11-Manufacturing/       # 生产制造（4 Skills）
+└── 12-SupplyChain/         # 供应链（4 Skills）
 ```
 
-每个 Skill 以独立 Markdown 文件呈现，包含：身份定义、能力描述、Prompt 模板、轻流能力标签、MCP 依赖、协作链路等完整信息。
+每个 Skill 以独立 Markdown 文件呈现，包含：身份定义、能力描述、输入/输出示例、使用指令、轻流能力标签、MCP 依赖、协作链路等完整信息。
 
 ---
 
