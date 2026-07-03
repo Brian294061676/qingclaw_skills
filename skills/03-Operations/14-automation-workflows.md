@@ -53,10 +53,10 @@ qingflow_mcp:
 
 ### 前置条件
 
-1. 安装 @qingflow-tech/qingflow-app-builder-mcp@latest
-1. 安装 @qingflow-tech/qingflow-app-user-mcp@latest
-2. 完成轻流认证（auth_login 或 auth_use_token）
-3. 选择目标工作区（workspace_select）
+1. 安装 @qingflow-tech/qingflow-app-builder-mcp
+1. 安装 @qingflow-tech/qingflow-app-user-mcp
+2. 完成轻流认证（auth_use_credential）
+3. 工作区由 auth_use_credential 上下文自动绑定
 
 ### 可调用的 MCP 工具
 
@@ -108,23 +108,23 @@ qingflow_mcp:
 ## 安装方式
 
 ### 方式一：直接安装 MD 文件
-将本文件放入 OpenClaw 的 skills 目录：
+将本文件放入 QingClaw 的 skills 目录：
 ```
-~/.openclaw/skills/14-automation-workflows.md
+~/.qingclaw/skills/14-automation-workflows.md
 ```
-或直接将本 .md 文件发送给小龙虾（OpenClaw）即可使用。
+或直接将本 .md 文件发送给QingClaw（小龙虾）即可使用。
 
 ### 方式二：连接轻流 MCP
 
 ```bash
 # 安装轻流 MCP 包
-npm install -g @qingflow-tech/qingflow-app-builder-mcp@latest
-npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
+npm install @qingflow-tech/qingflow-app-builder-mcp
+npm install @qingflow-tech/qingflow-app-user-mcp
 
 # 认证登录
-# 方式A：账号密码登录 → auth_login
-# 方式B：Token接入 → auth_use_token
+# 推荐方式：注入 credential → auth_use_credential
+# MCP 自动解析 token / wsId / qfVersion 上下文
 
-# 选择工作区
-# workspace_list → workspace_select
+# 工作区由 auth_use_credential 上下文自动绑定
+# 如需切换可调用 workspace_list 查看可用工作区
 ```

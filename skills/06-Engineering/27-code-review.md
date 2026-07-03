@@ -73,8 +73,8 @@ vibe: Bug风险、规范问题、性能隐患，AI帮你在提交前把关代码
 ## 安装方式
 
 ### 方式一：直接安装 MD 文件
-将本文件放入 OpenClaw 的 skills 目录：
+将本文件放入 QingClaw 的 skills 目录：
 ```
-~/.openclaw/skills/27-code-review.md
+~/.qingclaw/skills/27-code-review.md
 ```
-或直接将本 .md 文件发送给小龙虾（OpenClaw）即可使用。
+或直接将本 .md 文件发送给QingClaw（小龙虾）即可使用。

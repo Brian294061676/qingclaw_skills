@@ -73,8 +73,8 @@ vibe: 把模糊的需求变成清晰的用户故事，每条都带验收条件
 ## 安装方式
 
 ### 方式一：直接安装 MD 文件
-将本文件放入 OpenClaw 的 skills 目录：
+将本文件放入 QingClaw 的 skills 目录：
 ```
-~/.openclaw/skills/33-user-story-writer.md
+~/.qingclaw/skills/33-user-story-writer.md
 ```
-或直接将本 .md 文件发送给小龙虾（OpenClaw）即可使用。
+或直接将本 .md 文件发送给QingClaw（小龙虾）即可使用。

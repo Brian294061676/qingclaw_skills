@@ -73,8 +73,8 @@ vibe: 618、双11、新品发布…各种活动方案和文案一键生成
 ## 安装方式
 
 ### 方式一：直接安装 MD 文件
-将本文件放入 OpenClaw 的 skills 目录：
+将本文件放入 QingClaw 的 skills 目录：
 ```
-~/.openclaw/skills/12-copywriter.md
+~/.qingclaw/skills/12-copywriter.md
 ```
-或直接将本 .md 文件发送给小龙虾（OpenClaw）即可使用。
+或直接将本 .md 文件发送给QingClaw（小龙虾）即可使用。

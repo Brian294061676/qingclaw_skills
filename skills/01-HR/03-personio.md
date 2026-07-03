@@ -52,9 +52,9 @@ qingflow_mcp:
 
 ### 前置条件
 
-1. 安装 @qingflow-tech/qingflow-app-user-mcp@latest
-1. 完成轻流认证（auth_login 或 auth_use_token）
-1. 选择目标工作区（workspace_select）
+1. 安装 @qingflow-tech/qingflow-app-user-mcp
+1. 完成轻流认证（auth_use_credential）
+1. 工作区由 auth_use_credential 上下文自动绑定
 1. 确保工作区中已有绩效考核、周报或目标跟踪类应用
 
 ### 可调用的 MCP 工具
@@ -64,6 +64,7 @@ qingflow_mcp:
 | `record_list` | 读取绩效台账、目标进展和周期汇报数据 | app-user-mcp |
 | `record_get` | 查看单条绩效记录或员工评估详情 | app-user-mcp |
 | `record_analyze` | 分析绩效分布、达成率和趋势 | app-user-mcp |
+| `record_update_schema_get` | 获取可更新字段 schema | app-user-mcp |
 | `record_update` | 回写绩效建议、面谈结论或改进项 | app-user-mcp |
 
 ### 典型操作流程
@@ -109,22 +110,22 @@ qingflow_mcp:
 ## 安装方式
 
 ### 方式一：直接安装 MD 文件
-将本文件放入 OpenClaw 的 skills 目录：
+将本文件放入 QingClaw 的 skills 目录：
 ```
-~/.openclaw/skills/03-personio.md
+~/.qingclaw/skills/03-personio.md
 ```
-或直接将本 .md 文件发送给小龙虾（OpenClaw）即可使用。
+或直接将本 .md 文件发送给QingClaw（小龙虾）即可使用。
 
 ### 方式二：连接轻流 MCP
 
 ```bash
 # 安装轻流 MCP 包
-npm install -g @qingflow-tech/qingflow-app-user-mcp@latest
+npm install @qingflow-tech/qingflow-app-user-mcp
 
 # 认证登录
-# 方式A：账号密码登录 → auth_login
-# 方式B：Token接入 → auth_use_token
+# 推荐方式：注入 credential → auth_use_credential
+# MCP 自动解析 token / wsId / qfVersion 上下文
 
-# 选择工作区
-# workspace_list → workspace_select
+# 工作区由 auth_use_credential 上下文自动绑定
+# 如需切换可调用 workspace_list 查看可用工作区
 ```

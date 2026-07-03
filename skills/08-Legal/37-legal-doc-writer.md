@@ -73,8 +73,8 @@ vibe: 从事实梳理到正式措辞，AI帮你起草专业的法务函件
 ## 安装方式
 
 ### 方式一：直接安装 MD 文件
-将本文件放入 OpenClaw 的 skills 目录：
+将本文件放入 QingClaw 的 skills 目录：
 ```
-~/.openclaw/skills/37-legal-doc-writer.md
+~/.qingclaw/skills/37-legal-doc-writer.md
 ```
-或直接将本 .md 文件发送给小龙虾（OpenClaw）即可使用。
+或直接将本 .md 文件发送给QingClaw（小龙虾）即可使用。

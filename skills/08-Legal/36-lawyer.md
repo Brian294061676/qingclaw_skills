@@ -73,8 +73,8 @@ vibe: AI逐条审查合同条款，识别风险点并生成修改建议
 ## 安装方式
 
 ### 方式一：直接安装 MD 文件
-将本文件放入 OpenClaw 的 skills 目录：
+将本文件放入 QingClaw 的 skills 目录：
 ```
-~/.openclaw/skills/36-lawyer.md
+~/.qingclaw/skills/36-lawyer.md
 ```
-或直接将本 .md 文件发送给小龙虾（OpenClaw）即可使用。
+或直接将本 .md 文件发送给QingClaw（小龙虾）即可使用。

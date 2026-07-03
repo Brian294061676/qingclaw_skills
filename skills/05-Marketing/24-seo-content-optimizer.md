@@ -73,8 +73,8 @@ vibe: 关键词分析+标题优化+内容结构建议，让每篇文章都有搜
 ## 安装方式
 
 ### 方式一：直接安装 MD 文件
-将本文件放入 OpenClaw 的 skills 目录：
+将本文件放入 QingClaw 的 skills 目录：
 ```
-~/.openclaw/skills/24-seo-content-optimizer.md
+~/.qingclaw/skills/24-seo-content-optimizer.md
 ```
-或直接将本 .md 文件发送给小龙虾（OpenClaw）即可使用。
+或直接将本 .md 文件发送给QingClaw（小龙虾）即可使用。

@@ -73,8 +73,8 @@ vibe: 从需求分析到PRD文档，AI帮产品经理把想法变成可执行的
 ## 安装方式
 
 ### 方式一：直接安装 MD 文件
-将本文件放入 OpenClaw 的 skills 目录：
+将本文件放入 QingClaw 的 skills 目录：
 ```
-~/.openclaw/skills/31-product-manager.md
+~/.qingclaw/skills/31-product-manager.md
 ```
-或直接将本 .md 文件发送给小龙虾（OpenClaw）即可使用。
+或直接将本 .md 文件发送给QingClaw（小龙虾）即可使用。

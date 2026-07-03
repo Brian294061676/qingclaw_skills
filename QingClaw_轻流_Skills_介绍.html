@@ -14,6 +14,7 @@
   --hr:#1B5E9E;--finance:#2E7D32;--ops:#E65100;--sales:#C62828;
   --marketing:#6A1B9A;--eng:#283593;--product:#00838F;--legal:#4E342E;
   --pm:#AD1457;--admin:#37474F;
+  --mfg:#BF360C;--supply:#00695C;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;color:var(--text);line-height:1.6;background:var(--off-white)}
@@ -186,8 +187,8 @@ section{padding:80px 0}
     <h1>QingClaw × 轻流</h1>
     <p class="subtitle">「搭 · 问 · 析 · 生 · 联」五大 AI 能力矩阵 · Skills 企业智能化解决方案</p>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="num">10</div><div class="label">业务领域</div></div>
-      <div class="hero-stat"><div class="num">51</div><div class="label">AI Skills</div></div>
+      <div class="hero-stat"><div class="num">12</div><div class="label">业务领域</div></div>
+      <div class="hero-stat"><div class="num">62</div><div class="label">AI Skills</div></div>
       <div class="hero-stat"><div class="num">3</div><div class="label">MCP 包</div></div>
       <div class="hero-stat"><div class="num">6</div><div class="label">能力维度</div></div>
     </div>
@@ -247,18 +248,18 @@ section{padding:80px 0}
     <div class="mcp-cards">
       <div class="mcp-card">
         <h3>CLI 命令行工具</h3>
-        <code>@josephyan/qingflow-cli@beta</code>
-        <p>支持搭建、发布、调试，CLI builder 能力辅助快速搭建应用</p>
+        <code>@qingflow-tech/qingflow-cli</code>
+        <p>统一 CLI 入口，支持搭建、发布、调试，认证推荐 auth_use_credential</p>
       </div>
       <div class="mcp-card">
         <h3>运行态能力（User MCP）</h3>
-        <code>@josephyan/qingflow-app-user-mcp@beta</code>
-        <p>数据读写 record_list / record_insert / record_update、任务执行 task_action_execute、数据分析 record_analyze、导入导出</p>
+        <code>@qingflow-tech/qingflow-app-user-mcp</code>
+        <p>record_list / record_insert / record_update / record_analyze / task_action_execute / record_browse_schema_get / file_upload_local 等 40+ 工具</p>
       </div>
       <div class="mcp-card">
         <h3>搭建态能力（Builder MCP）</h3>
-        <code>@josephyan/qingflow-app-builder-mcp@beta</code>
-        <p>应用建模 app_schema_apply、布局 app_layout_apply、流程 app_flow_apply、视图 app_views_apply、图表 app_charts_apply、门户 portal_apply</p>
+        <code>@qingflow-tech/qingflow-app-builder-mcp</code>
+        <p>app_schema_apply / app_layout_apply / app_flow_apply / app_views_apply / app_charts_apply / portal_apply / package_apply 等 AI-native Builder 工具</p>
       </div>
     </div>
   </div>
@@ -274,7 +275,7 @@ section{padding:80px 0}
   <div class="container">
     <div class="section-title" style="margin-bottom:24px">
       <h2>Skills 全景展示</h2>
-      <p>10 大业务领域 × 51 个 AI Skill，构建企业全场景智能化闭环</p>
+      <p>12 大业务领域 × 62 个 AI Skill，构建企业全场景智能化闭环</p>
     </div>
     <div class="search-box">
       <span class="search-icon">🔍</span>
@@ -290,15 +291,15 @@ section{padding:80px 0}
   <div class="container">
     <div class="section-title" style="margin-bottom:48px">
       <h2 style="color:#fff">轻流能力维度统计</h2>
-      <p style="color:var(--text-light)">51 个 Skills 对轻流各能力维度的覆盖分布</p>
+      <p style="color:var(--text-light)">62 个 Skills 对轻流各能力维度的覆盖分布</p>
     </div>
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-icon">📝</div><div class="stat-num">36</div><div class="stat-pct">71%</div><div class="stat-name">生（AI 内容生成）</div></div>
-      <div class="stat-card"><div class="stat-icon">📊</div><div class="stat-num">33</div><div class="stat-pct">65%</div><div class="stat-name">析（数据分析）</div></div>
-      <div class="stat-card"><div class="stat-icon">🏗️</div><div class="stat-num">20</div><div class="stat-pct">39%</div><div class="stat-name">搭（Builder 建模）</div></div>
-      <div class="stat-card"><div class="stat-icon">⚡</div><div class="stat-num">20</div><div class="stat-pct">39%</div><div class="stat-name">联（流程联动）</div></div>
-      <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-num">10</div><div class="stat-pct">20%</div><div class="stat-name">问（组织知识）</div></div>
-      <div class="stat-card"><div class="stat-icon">📦</div><div class="stat-num">3</div><div class="stat-pct">6%</div><div class="stat-name">导入导出</div></div>
+      <div class="stat-card"><div class="stat-icon">📝</div><div class="stat-num">47</div><div class="stat-pct">76%</div><div class="stat-name">生（AI 内容生成）</div></div>
+      <div class="stat-card"><div class="stat-icon">📊</div><div class="stat-num">44</div><div class="stat-pct">71%</div><div class="stat-name">析（数据分析）</div></div>
+      <div class="stat-card"><div class="stat-icon">🏗️</div><div class="stat-num">20</div><div class="stat-pct">32%</div><div class="stat-name">搭（Builder 建模）</div></div>
+      <div class="stat-card"><div class="stat-icon">⚡</div><div class="stat-num">31</div><div class="stat-pct">50%</div><div class="stat-name">联（流程联动）</div></div>
+      <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-num">10</div><div class="stat-pct">16%</div><div class="stat-name">问（组织知识）</div></div>
+      <div class="stat-card"><div class="stat-icon">📦</div><div class="stat-num">3</div><div class="stat-pct">5%</div><div class="stat-name">导入导出</div></div>
     </div>
     <div class="section-title" style="margin-bottom:32px">
       <h2 style="color:#fff;font-size:24px">Skill 类型分布</h2>
@@ -306,7 +307,7 @@ section{padding:80px 0}
     <div class="type-grid">
       <div class="type-card" style="border-color:var(--marketing)"><div><div class="type-num" style="color:var(--marketing)">22</div></div><div><div class="type-name">纯 AI 生成型</div><div class="type-desc">以文案/报告/分析生成为主，结果可回写轻流</div></div></div>
       <div class="type-card" style="border-color:var(--blue)"><div><div class="type-num" style="color:var(--accent)">14</div></div><div><div class="type-name">Builder 搭建型</div><div class="type-desc">直接在轻流中搭建应用/流程/看板</div></div></div>
-      <div class="type-card" style="border-color:var(--ops)"><div><div class="type-num" style="color:var(--ops)">9</div></div><div><div class="type-name">AI + 数据操作型</div><div class="type-desc">AI 生成 + 读写轻流数据</div></div></div>
+      <div class="type-card" style="border-color:var(--ops)"><div><div class="type-num" style="color:var(--ops)">20</div></div><div><div class="type-name">AI + 数据操作型</div><div class="type-desc">AI 生成 + 读写轻流数据，11 个新增 Agent 均属此类</div></div></div>
       <div class="type-card" style="border-color:var(--sales)"><div><div class="type-num" style="color:var(--sales)">6</div></div><div><div class="type-name">综合集成型</div><div class="type-desc">同时涵盖搭建、数据、流程、AI 生成</div></div></div>
     </div>
   </div>
@@ -350,23 +351,23 @@ section{padding:80px 0}
           <div class="step-num" style="background:var(--ops)">1</div>
           <div class="step-content">
             <h4>安装轻流 MCP 包</h4>
-            <code>npm install @josephyan/qingflow-cli@beta
-npm install @josephyan/qingflow-app-user-mcp@beta
-npm install @josephyan/qingflow-app-builder-mcp@beta</code>
+            <code>npm install @qingflow-tech/qingflow-cli
+npm install @qingflow-tech/qingflow-app-user-mcp
+npm install @qingflow-tech/qingflow-app-builder-mcp</code>
           </div>
         </div>
         <div class="install-step">
           <div class="step-num" style="background:var(--ops)">2</div>
           <div class="step-content">
             <h4>认证登录</h4>
-            <p>方式A：账号密码登录 → auth_login<br>方式B：Token 接入 → auth_use_token</p>
+            <p>推荐：注入 credential → auth_use_credential<br>MCP 自动解析 token / wsId / qfVersion 上下文</p>
           </div>
         </div>
         <div class="install-step">
           <div class="step-num" style="background:var(--ops)">3</div>
           <div class="step-content">
-            <h4>选择工作区</h4>
-            <code>workspace_list → workspace_select</code>
+            <h4>工作区自动绑定</h4>
+            <code>工作区由 auth_use_credential 上下文自动绑定</code>
           </div>
         </div>
         <div class="install-step">
@@ -391,7 +392,7 @@ npm install @josephyan/qingflow-app-builder-mcp@beta</code>
       GitHub · Brian294061676/qingclaw_skills
     </a>
   </p>
-  <p style="margin-top:8px;font-size:12px;opacity:.6">Skills · 10 大领域 · 完整智能闭环 · 2026</p>
+  <p style="margin-top:8px;font-size:12px;opacity:.6">62 Skills · 12 大领域 · 完整智能闭环 · 2026</p>
 </footer>
 
 <!-- Modal -->
@@ -436,6 +437,7 @@ const domains = [
       {num:"08",en:"Xero",cn:"应收应付管理",func:"账款汇总→账期管理→异常核查→催款话术→对账跟进",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
       {num:"09",en:"Budget Planner",cn:"预算编制助手",func:"预算模板搭建→历史数据对比→部门预算审批流程→执行偏差预警",tags:["生","析","搭","联"],mcp:["qingflow-app-user-mcp","qingflow-app-builder-mcp"],type:"综合集成"},
       {num:"10",en:"Invoice Processor",cn:"发票处理中心",func:"发票OCR识别→进销项匹配→税率校验→台账管理→自动入库",tags:["析","导入导出","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
+      {num:"56",en:"Collection Forecast Agent",cn:"回款预测 Agent",func:"回款跟踪→逾期预测→催收策略→财务报告→状态回写轻流",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
     ]},
   { id:"03", key:"Operations", cn:"运营管理", en:"Operations", color:"#E65100", light:"#FFF3E0",
     desc:"覆盖数据分析、活动策划、用户反馈、SOP 管理、运营看板全链路",
@@ -447,6 +449,8 @@ const domains = [
       {num:"13",en:"Review Summarizer",cn:"用户反馈分析师",func:"反馈归集→问题分类→情绪判断→优先级排序→优化建议",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
       {num:"14",en:"Automation Workflows",cn:"运营SOP生成器",func:"流程拆解→节点说明→SOP模板→检查清单→风险标记",tags:["生","搭","联"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
       {num:"15",en:"KPI Dashboard Builder",cn:"运营看板搭建器",func:"在轻流中搭建数据看板（图表配置/门户展示/定时刷新）",tags:["搭","析"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
+      {num:"61",en:"Process Diagnostics Agent",cn:"流程诊断 Agent",func:"效率分析→卡点识别→超时预警→优化建议→诊断回写轻流",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
+      {num:"62",en:"Business Report Agent",cn:"经营汇报 Agent",func:"数据汇总→指标分析→汇报生成→改进跟踪→记录回写轻流",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
     ]},
   { id:"04", key:"Sales", cn:"销售管理", en:"Sales", color:"#C62828", light:"#FFEBEE",
     desc:"覆盖线索挖掘、客户跟进、方案生成、CRM 搭建、赢输分析全流程",
@@ -459,6 +463,7 @@ const domains = [
       {num:"19",en:"CRM App Builder",cn:"客户管理系统搭建器",func:"一键搭建完整CRM（客户表/商机表/跟进记录/合同/销售漏斗看板）",tags:["搭","析","联","问"],mcp:["qingflow-app-user-mcp","qingflow-app-builder-mcp"],type:"综合集成"},
       {num:"20",en:"Win-Loss Analyzer",cn:"赢输单分析师",func:"成交/丢单原因归纳→竞品对比→策略建议→经验沉淀",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
       {num:"51",en:"Sales Call Analyzer",cn:"销售录音分析师",func:"录音转写→话术评估→客户意向分析→关键信息提取→改进建议→回写轻流",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
+      {num:"55",en:"Customer Profile Agent",cn:"客户画像 Agent",func:"信息建档→需求识别→画像标签→准备材料→回写轻流CRM",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
     ]},
   { id:"05", key:"Marketing", cn:"市场营销", en:"Marketing", color:"#6A1B9A", light:"#F3E5F5",
     desc:"覆盖内容生成、社媒管理、市场调研、SEO 优化、ROI 分析全链路",
@@ -470,6 +475,7 @@ const domains = [
       {num:"23",en:"Competitive Intelligence",cn:"市场调研分析师",func:"竞品归集→差异提炼→用户需求洞察→机会点→调研结论",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"纯AI生成"},
       {num:"24",en:"SEO Content Optimizer",cn:"SEO内容优化师",func:"关键词分析→标题优化→内容结构→元数据建议→排名策略",tags:["生"],mcp:[],type:"纯AI生成"},
       {num:"25",en:"Campaign ROI Analyzer",cn:"活动ROI分析师",func:"投放数据归集→ROI计算→渠道效果对比→预算优化→策略建议",tags:["生","析","搭"],mcp:["qingflow-app-user-mcp","qingflow-app-builder-mcp"],type:"AI+数据"},
+      {num:"60",en:"AI Search Diagnostics Agent",cn:"AI 搜索诊断 Agent",func:"品牌监测→推荐排名→问答诊断→GEO策略→报告回写轻流",tags:["生","析"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
     ]},
   { id:"06", key:"Engineering", cn:"技术研发", en:"Engineering", color:"#283593", light:"#E8EAF6",
     desc:"覆盖技术文档、代码评审、测试用例、缺陷管理、API 集成全流程",
@@ -525,6 +531,24 @@ const domains = [
       {num:"48",en:"Knowledge Base Builder",cn:"企业知识库搭建器",func:"搭建知识管理门户（分类体系/文档管理/搜索/权限配置）",tags:["搭","析","问"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
       {num:"49",en:"Office Approval Center",cn:"行政审批中心",func:"搭建通用审批应用（用车/用章/采购/会议室等多场景审批）",tags:["搭","联","问"],mcp:["qingflow-app-builder-mcp"],type:"Builder搭建"},
       {num:"50",en:"Supplier Evaluation",cn:"供应商评估助手",func:"供应商信息归集→评分体系→绩效分析→淘汰预警→推荐报告",tags:["生","析","搭"],mcp:["qingflow-app-builder-mcp","qingflow-app-user-mcp"],type:"AI+数据"},
+    ]},
+  { id:"11", key:"Manufacturing", cn:"生产制造", en:"Manufacturing", color:"#BF360C", light:"#FBE9E7",
+    desc:"覆盖排产计划、交付预测、产能优化全流程，AI 赋能智能制造数字化转型",
+    chain:"52 智能排产(订单排程) → 54 产能优化(瓶颈解决) → 53 交付预测(风险管控)",
+    mcpNote:"三个 Agent 均通过 record_list + record_analyze 读取轻流生产数据，AI 生成排产/预测/优化方案后通过 record_insert 回写执行建议，实现生产数据驱动的智能决策闭环。",
+    skills:[
+      {num:"52",en:"Smart Production Scheduler",cn:"智能排产 Agent",func:"订单排程→产能分配→冲突检测→插单分析→排产回写轻流",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
+      {num:"53",en:"Delivery Prediction Agent",cn:"交付预测 Agent",func:"进度跟踪→延期预测→原因分析→调整建议→风险回写轻流",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
+      {num:"54",en:"Capacity Optimization Agent",cn:"产能优化 Agent",func:"负荷分析→瓶颈识别→班组调度→提升方案→结果回写轻流",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
+    ]},
+  { id:"12", key:"SupplyChain", cn:"供应链", en:"Supply Chain", color:"#00695C", light:"#E0F7FA",
+    desc:"覆盖需求预测、供应商履约、询价比价全流程，AI 驱动供应链智能化管理",
+    chain:"57 需求预测(需求计划) → 59 询价比价(采购决策) → 58 履约预测(交付管控)",
+    mcpNote:"三个 Agent 通过 record_list + record_analyze 读取轻流采购/库存/供应商数据，AI 生成预测与决策建议后通过 record_insert 回写，打通「需求→采购→履约」全链路。",
+    skills:[
+      {num:"57",en:"Demand Forecast Agent",cn:"需求预测 Agent",func:"历史分析→需求预测→缺货识别→补货建议→回写轻流",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
+      {num:"58",en:"Supplier Fulfillment Agent",cn:"履约预测 Agent",func:"交期跟踪→延期预测→影响分析→应对措施→风险回写轻流",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
+      {num:"59",en:"Quotation Comparison Agent",cn:"询价比价 Agent",func:"报价汇总→多维比价→TCO分析→决策建议→结果回写轻流",tags:["生","析","联"],mcp:["qingflow-app-user-mcp"],type:"AI+数据"},
     ]},
 ];
 
@@ -598,7 +622,7 @@ function openModal(skill, domain) {
     const cfg = TAG_CONFIG[t] || TAG_CONFIG['导'];
     return `<span class="tag" style="background:${cfg.bg};color:${cfg.color};font-size:13px;padding:4px 14px">${cfg.icon} ${cfg.label}</span>`;
   }).join('');
-  const mcpHTML = skill.mcp.length ? skill.mcp.map(m => `<code style="display:inline-block;margin:2px 4px 2px 0;padding:4px 10px;background:#f0f7ff;border-radius:4px;font-size:12px">@josephyan/${m}@beta</code>`).join('') : '<span style="color:#999">无需 MCP 连接，纯 AI 生成能力</span>';
+  const mcpHTML = skill.mcp.length ? skill.mcp.map(m => `<code style="display:inline-block;margin:2px 4px 2px 0;padding:4px 10px;background:#f0f7ff;border-radius:4px;font-size:12px">@qingflow-tech/${m}</code>`).join('') : '<span style="color:#999">无需 MCP 连接，纯 AI 生成能力</span>';
 
   body.innerHTML = `
     <h2 style="color:${domain.color}">#${skill.num} ${skill.cn}</h2>
