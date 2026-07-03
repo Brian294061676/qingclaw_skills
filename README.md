@@ -58,15 +58,15 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 | 2 | 🚚 交付预测 | 生产主管、销售/客服、管理层 | 风险订单、延期原因、调整建议 | #53 Delivery Prediction | ✅ |
 | 3 | ⚙️ 产能优化 | 车间主任、班组长、设备负责人 | 瓶颈分析、负荷情况、优化建议 | #54 Capacity Optimization | ✅ |
 | 4 | 👤 客户画像 | 销售、销售主管、客服/客成 | 客户画像、需求标签、跟进建议 | #55 Customer Profile | ✅ |
-| 5 | 🔄 商机卡点 | 销售、销售主管、售前 | 停滞商机、卡点原因、推进建议 | #17 Sales Pipeline Tracker | ✅ 已覆盖 |
+| 5 | 🔄 商机卡点 | 销售、销售主管、售前 | 停滞商机、卡点原因、推进建议 | #17 Sales Pipeline Tracker | ✅ |
 | 6 | 💰 回款预测 | 销售、财务、销售主管 | 回款风险、逾期预测、催收建议 | #56 Collection Forecast | ✅ |
 | 7 | 📈 需求预测 | 采购、仓库、供应链负责人 | 需求预测、缺货风险、补货建议 | #57 Demand Forecast | ✅ |
 | 8 | 📦 履约预测 | 采购、供应商管理、生产计划 | 履约风险、延期预测、交付影响 | #58 Supplier Fulfillment | ✅ |
 | 9 | ⚖️ 询价比价 | 采购、采购主管、财务 | 比价结果、供应商建议、采购依据 | #59 Quotation Comparison | ✅ |
 | 10 | 🔎 AI 搜索诊断 | 市场、品牌、增长运营 | 品牌提及、推荐结果、问题诊断 | #60 AI Search Diagnostics | ✅ |
-| 11 | ✏️ 内容优化 | 市场、内容运营、SEO/GEO 运营 | 内容建议、FAQ 草稿、优化方案 | #24 SEO Content Optimizer | ✅ 已覆盖 |
-| 12 | 🕵️ 竞品监测 | 市场、销售、管理层 | 竞品提及、优势对比、差距分析 | #23 Competitive Intelligence | ✅ 已覆盖 |
-| 13 | 📊 数据分析 | 管理层、业务负责人、数据分析 | 指标变化、异常数据、分析结论 | #11 Data Analysis + #15 KPI Dashboard | ✅ 已覆盖 |
+| 11 | ✏️ 内容优化 | 市场、内容运营、SEO/GEO 运营 | 内容建议、FAQ 草稿、优化方案 | #24 SEO Content Optimizer | ✅ |
+| 12 | 🕵️ 竞品监测 | 市场、销售、管理层 | 竞品提及、优势对比、差距分析 | #23 Competitive Intelligence | ✅ |
+| 13 | 📊 数据分析 | 管理层、业务负责人、数据分析 | 指标变化、异常数据、分析结论 | #11 Data Analysis + #15 KPI Dashboard | ✅ |
 | 14 | 🩺 流程诊断 | 管理层、流程负责人、部门主管 | 流程卡点、超时节点、优化建议 | #61 Process Diagnostics | ✅ |
 | 15 | 📋 经营汇报 | 管理层、部门负责人、运营人员 | 经营摘要、汇报材料、改进事项 | #62 Business Report | ✅ |
 
