@@ -330,23 +330,25 @@ skills/
 
 ## 轻流 MCP 能力清单
 
-> 基于当前可直接调用的 MCP 工具整理，覆盖运行态 + Builder + CLI 全能力。
+> 基于当前可直接调用的 MCP 工具整理：app-user-mcp（运行态，45 工具）+ app-builder-mcp（搭建态，40 工具）+ qingflow-cli。
 
 ### 一、@qingflow-tech/qingflow-cli — CLI 命令行工具
 
-| 包名 | 用途 | 安装命令 | 适用 Skill 类型 |
-|------|------|---------|----------------|
-| `@qingflow-tech/qingflow-cli` | CLI 命令行工具，支持搭建 / 发布 / 调试 | `npm install @qingflow-tech/qingflow-cli` | Builder 类 Skill 的 CLI 辅助 |
+| 包名 | 用途 | 安装命令 |
+|------|------|---------|
+| `@qingflow-tech/qingflow-cli` | CLI 命令行工具，支持搭建 / 发布 / 调试 | `npm install @qingflow-tech/qingflow-cli` |
 
 | 能力 | 说明 |
 |------|------|
-| 认证登录 | 推荐使用 `auth_use_credential` 凭证接入，自动解析 token / wsId / qfVersion |
-| 工作区切换 | 自动绑定工作区，必要时用 `workspace_select` 切换 |
+| 认证登录 | 配合 `auth_use_credential` 凭证接入，自动解析 token / wsId / qfVersion |
+| 工作区切换 | 自动绑定工作区，必要时 `workspace_select` 切换 |
 | 应用调试 | 配合 Builder MCP 完成建模、发布、校验流程 |
+
+> cli 为命令行工具，不暴露 MCP 工具；认证 / 工作区 / 记录等能力通过下方两个 MCP 包调用。
 
 ---
 
-### 二、@qingflow-tech/qingflow-app-user-mcp — 运行态能力
+### 二、@qingflow-tech/qingflow-app-user-mcp — 运行态能力（48 工具）
 
 面向数据读写、任务处理、分析统计、导入导出等日常运行场景。
 
@@ -354,7 +356,7 @@ skills/
 npm install @qingflow-tech/qingflow-app-user-mcp
 ```
 
-#### 2.1 认证与工作区
+#### 2.1 认证与工作区（6）
 
 | 工具 | 说明 |
 |------|------|
@@ -365,7 +367,7 @@ npm install @qingflow-tech/qingflow-app-user-mcp
 | `workspace_select` | 切换到目标工作区 |
 | `workspace_get` | 获取当前工作区详情 |
 
-#### 2.2 应用与门户读取
+#### 2.2 应用与视图读取（4）
 
 | 工具 | 说明 |
 |------|------|
@@ -373,24 +375,32 @@ npm install @qingflow-tech/qingflow-app-user-mcp
 | `app_get` | 获取单个应用详情 |
 | `view_get` | 读取视图配置 |
 | `chart_get` | 读取图表配置 |
+
+#### 2.3 门户读取（2）
+
+| 工具 | 说明 |
+|------|------|
 | `portal_list` | 列出门户 |
 | `portal_get` | 获取门户详情 |
 
-#### 2.3 组织架构与人员目录
+#### 2.4 组织架构与人员目录（5）
 
 | 工具 | 说明 |
 |------|------|
 | `directory_search` | 统一目录搜索（部门 / 成员 / 外部联系人） |
+| `directory_list_internal_users` | 列出内部成员 |
+| `directory_list_all_departments` | 获取全量部门树 |
 | `record_member_candidates` | 获取成员字段候选范围 |
 | `record_department_candidates` | 获取部门字段候选范围 |
 
-#### 2.4 记录 CRUD
+#### 2.5 记录读写与分析（10）
 
 | 工具 | 说明 |
 |------|------|
 | `record_get` | 读取单条记录 |
 | `record_list` | 列表浏览记录 |
 | `record_access` | 基于视图的数据访问 |
+| `record_analyze` | 分析型查询（分组、聚合、统计、排序、筛选） |
 | `record_insert` | 新增记录 |
 | `record_update` | 更新记录 |
 | `record_delete` | 删除记录 |
@@ -398,19 +408,16 @@ npm install @qingflow-tech/qingflow-app-user-mcp
 | `record_insert_schema_get` | 获取新增 schema |
 | `record_update_schema_get` | 获取更新 schema |
 
-#### 2.5 记录分析
+#### 2.6 记录操作日志（1）
 
 | 工具 | 说明 |
 |------|------|
-| `record_access` | 基于字段 schema 的分析型查询，支持分组、聚合、统计、排序、筛选 |
+| `record_logs_get` | 读取记录操作日志 / 流转痕迹 |
 
-#### 2.6 导入与导出
+#### 2.7 导入（6）
 
 | 工具 | 说明 |
 |------|------|
-| `record_export_start` | 启动导出任务 |
-| `record_export_status_get` | 查询导出状态 |
-| `record_export_direct` | 直接导出 |
 | `record_import_template_get` | 获取导入模板 |
 | `record_import_schema_get` | 获取导入 schema |
 | `record_import_verify` | 导入数据校验 |
@@ -418,14 +425,23 @@ npm install @qingflow-tech/qingflow-app-user-mcp
 | `record_import_start` | 启动导入 |
 | `record_import_status_get` | 查询导入状态 |
 
-#### 2.7 文件与附件
+#### 2.8 导出（4）
+
+| 工具 | 说明 |
+|------|------|
+| `record_export_start` | 启动导出任务 |
+| `record_export_status_get` | 查询导出状态 |
+| `record_export_get` | 获取导出结果 |
+| `record_export_direct` | 直接导出 |
+
+#### 2.9 文件与附件（2）
 
 | 工具 | 说明 |
 |------|------|
 | `file_get_upload_info` | 获取上传信息 |
 | `file_upload_local` | 上传本地文件（图片、附件、导入模板等） |
 
-#### 2.8 任务与流程
+#### 2.10 任务与流程（5）
 
 | 工具 | 说明 |
 |------|------|
@@ -435,16 +451,22 @@ npm install @qingflow-tech/qingflow-app-user-mcp
 | `task_associated_report_detail_get` | 获取关联报表明细 |
 | `task_action_execute` | 执行任务动作（审批、转交、退回等） |
 
-#### 2.9 代码块
+#### 2.11 代码块（2）
 
 | 工具 | 说明 |
 |------|------|
 | `record_code_block_schema_get` | 读取代码块 schema |
 | `record_code_block_run` | 执行代码块（计算字段、外部查询回填等） |
 
+#### 2.12 反馈（1）
+
+| 工具 | 说明 |
+|------|------|
+| `feedback_submit` | 提交能力反馈（无需登录） |
+
 ---
 
-### 三、@qingflow-tech/qingflow-app-builder-mcp — 搭建态能力
+### 三、@qingflow-tech/qingflow-app-builder-mcp — 搭建态能力（41 工具）
 
 面向应用建模、流程配置、视图图表、门户发布等搭建场景。
 
@@ -452,7 +474,7 @@ npm install @qingflow-tech/qingflow-app-user-mcp
 npm install @qingflow-tech/qingflow-app-builder-mcp
 ```
 
-#### 3.1 认证与工作区
+#### 3.1 认证与工作区（5）
 
 | 工具 | 说明 |
 |------|------|
@@ -460,9 +482,28 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 | `auth_logout` | Builder 侧退出登录 |
 | `auth_whoami` | Builder 侧查看身份 |
 | `workspace_list` | Builder 侧列出工作区 |
-| `workspace_select` | Builder 侧切换工作区 |
+| `workspace_get` | Builder 侧获取工作区详情 |
 
-#### 3.2 应用建模
+#### 3.2 应用配置读取（7）
+
+| 工具 | 说明 |
+|------|------|
+| `app_get` | 获取应用整体配置 |
+| `app_get_fields` | 读取字段配置 |
+| `app_get_layout` | 读取表单布局配置 |
+| `app_get_views` | 读取视图配置 |
+| `app_get_charts` | 读取图表配置 |
+| `app_get_flow` | 读取流程配置 |
+| `chart_get` | 读取单个图表详情 |
+
+#### 3.3 流程配置读取（2）
+
+| 工具 | 说明 |
+|------|------|
+| `app_flow_get` | 读取流程详情 |
+| `app_flow_get_schema` | 读取流程 schema |
+
+#### 3.4 应用建模 apply（7）
 
 | 工具 | 说明 |
 |------|------|
@@ -471,10 +512,24 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 | `app_flow_apply` | 配置审批流 / 自动化流程 |
 | `app_views_apply` | 配置列表视图 / 看板视图 |
 | `app_charts_apply` | 创建趋势图、漏斗图、饼图、柱状图等 |
+| `app_custom_buttons_apply` | 创建 / 更新自定义按钮 |
+| `app_associated_resources_apply` | 应用关联资源 |
+
+#### 3.5 发布与修复（3）
+
+| 工具 | 说明 |
+|------|------|
 | `app_publish_verify` | 发布前配置校验 |
+| `app_release_edit_lock_if_mine` | 释放发布编辑锁 |
+| `app_repair_code_blocks` | 修复代码块配置 |
+
+#### 3.6 应用解析（1）
+
+| 工具 | 说明 |
+|------|------|
 | `app_resolve` | 按名称或 key 解析应用 |
 
-#### 3.3 门户与解决方案包
+#### 3.7 门户（4）
 
 | 工具 | 说明 |
 |------|------|
@@ -482,12 +537,17 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 | `portal_get` | 读取门户详情 |
 | `portal_list` | 列出门户 |
 | `portal_delete` | 删除门户 |
+
+#### 3.8 解决方案包（4）
+
+| 工具 | 说明 |
+|------|------|
 | `package_apply` | 创建 / 更新解决方案包 |
 | `package_list` | 列出解决方案包 |
 | `package_get` | 读取解决方案包详情 |
 | `solution_install` | 安装打包的解决方案 / 模板 |
 
-#### 3.4 角色与权限
+#### 3.9 角色与成员（3）
 
 | 工具 | 说明 |
 |------|------|
@@ -495,25 +555,20 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 | `role_create` | 创建角色 |
 | `role_search` | 搜索角色 |
 
-#### 3.5 辅助工具
+#### 3.10 辅助（4）
 
 | 工具 | 说明 |
 |------|------|
 | `builder_tool_contract` | 查询工具契约（别名、枚举、最小示例） |
-| `app_custom_buttons_apply` | 创建 / 更新自定义按钮 |
 | `button_style_catalog_get` | 查询按钮样式目录 |
-| `app_repair_code_blocks` | 修复代码块配置 |
-| `app_release_edit_lock_if_mine` | 释放发布编辑锁 |
-| `app_get_fields` | 读取字段配置 |
-| `app_get_layout` | 读取布局配置 |
-| `app_get_views` | 读取视图配置 |
-| `app_get_charts` | 读取图表配置 |
-| `app_get_flow` / `app_flow_get` | 读取流程配置 |
-| `app_flow_get_schema` | 读取流程 schema |
-| `app_associated_resources_apply` | 关联资源应用 |
 | `workspace_icon_catalog_get` | 查询工作区图标 / 颜色目录 |
-| `feedback_submit` | 提交反馈（无需登录） |
 | `file_upload_local` | Builder 侧上传本地文件 |
+
+#### 3.11 反馈（1）
+
+| 工具 | 说明 |
+|------|------|
+| `feedback_submit` | 提交能力反馈（无需登录） |
 
 ---
 
@@ -521,13 +576,13 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 
 | 能力类别 | 涵盖范围 | 关键工具 |
 |---------|---------|---------|
-| 🔄 运行态数据能力 | 读、写、删、分析、导入、文件上传、任务执行 | record_*, task_*, file_* |
+| 🔄 运行态数据能力 | 读、写、删、分析、日志、导入导出、文件、任务执行 | record_*, task_*, file_* |
 | 👥 组织与权限支撑 | 成员目录、部门目录、成员候选、角色管理 | directory_*, member_*, role_* |
-| 🏗️ Builder 建模能力 | 应用 schema、布局、流程、视图、图表、门户 | app_*_apply, portal_apply |
-| ⚡ 自动化扩展能力 | 代码块、QLinker、流程动作、图表/门户展示 | record_code_block_*, task_action_* |
-| 🔧 实施辅助能力 | 导入修复、编辑锁释放、发布校验、包管理 | record_import_*, package_*, app_publish_verify |
+| 🏗️ Builder 建模能力 | schema、流程、视图、图表、自定义按钮、门户、解决方案包 | app_*_apply, portal_apply, package_* |
+| ⚡ 自动化扩展能力 | 代码块、流程动作、关联资源 | record_code_block_*, task_action_*, app_associated_resources_apply |
+| 🔧 实施辅助能力 | 导入修复、编辑锁释放、发布校验、工具契约查询 | record_import_repair, app_release_edit_lock, app_publish_verify, builder_tool_contract |
 
-> 本清单按当前可直接调用的 MCP 工具整理，代表已接入并可用的能力范围。
+> 本清单按当前可直接调用的 MCP 工具整理（app-user-mcp 48 + app-builder-mcp 41），代表已接入并可用的能力范围。
 
 ---
 
