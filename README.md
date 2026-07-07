@@ -1,8 +1,8 @@
-# QingClaw Skills — 轻流 68 Skills
+# QingClaw Skills — 轻流 69 Skills
 
 > AI Agent + 无代码平台 · 企业智能化解决方案
 
-以 [QingClaw](https://qingflow.com/qing-claw/) 的 AI Agent 能力 + [轻流 10.0](https://qingclaw.oalite.com/)「搭·问·析·生·联」五大 AI 能力矩阵，覆盖企业 **12 大业务领域 68 个 Skills**，形成 "AI 生成 + 无代码搭建 + 数据驱动 + 流程自动化" 的完整智能闭环。
+以 [QingClaw](https://qingflow.com/qing-claw/) 的 AI Agent 能力 + [轻流 10.0](https://qingclaw.oalite.com/)「搭·问·析·生·联」五大 AI 能力矩阵，覆盖企业 **12 大业务领域 69 个 Skills**，形成 "AI 生成 + 无代码搭建 + 数据驱动 + 流程自动化" 的完整智能闭环。
 
 **相关链接**：[QingClaw 客户端下载](https://qingflow.com/qing-claw/) | [轻流官网](https://qingflow.com) | [轻流 10.0 介绍](https://qingclaw.oalite.com/) | [Skills 介绍](https://qingclawskills.lovable.app)
 
@@ -12,11 +12,11 @@
 
 | 标签 | 能力维度 | 说明 | 覆盖 Skills | 占比 |
 |------|---------|------|------------|------|
-| 📝 生 | AI 内容生成 | AI 生成文案 / 报告 / 方案 | 51 | 75% |
-| 📊 析 | 智能分析 | 数据读取 / 分析 / 洞察 | 49 | 72% |
+| 📝 生 | AI 内容生成 | AI 生成文案 / 报告 / 方案 | 52 | 75% |
+| 📊 析 | 智能分析 | 数据读取 / 分析 / 洞察 | 49 | 71% |
 | 🏗️ 搭 | AI 搭建 | 自然语言建表单 / 应用 / 页面 | 24 | 35% |
-| ⚡ 联 | 流程联动 | 流程自动化 / 任务执行 / 外部集成 | 33 | 49% |
-| 👥 问 | 组织知识 | 人员目录 / 知识库 / 智能问答 | 10 | 15% |
+| ⚡ 联 | 流程联动 | 流程自动化 / 任务执行 / 外部集成 | 33 | 48% |
+| 👥 问 | 组织知识 | 人员目录 / 知识库 / 智能问答 | 10 | 14% |
 | 📦 导入导出 | 批量数据 | 批量数据处理 | 5 | 7% |
 
 ---
@@ -104,7 +104,7 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 
 ---
 
-## 68 Skills 总览
+## 69 Skills 总览
 
 ### 一、人力资源 (HR)
 
@@ -181,7 +181,7 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 
 ### 五、市场营销 (Marketing)
 
-> 覆盖内容生成、社媒管理、市场调研、SEO 优化、ROI 分析、AI 搜索诊断全链路
+> 覆盖内容生成、社媒管理、市场调研、SEO 优化、ROI 分析、AI 搜索诊断、白皮书方案全链路
 
 | # | Skill 名称 | 核心功能 | 能力标签 | MCP 依赖 |
 |---|-----------|---------|---------|---------|
@@ -191,8 +191,9 @@ npm install @qingflow-tech/qingflow-app-builder-mcp
 | 24 | SEO内容优化师 (SEO Content Optimizer) | 关键词分析→标题优化→内容结构→元数据生成→策略建议 | 📝 | - |
 | 25 | 活动ROI分析师 (Campaign ROI Analyzer) | 投放数据归集→ROI计算→渠道对比→优化建议→轻流看板 | 📝📊🏗️ | app-builder + app-user |
 | 60 | AI搜索诊断 (AI Search Diagnostics) | 品牌提及监测→推荐排名分析→问答覆盖诊断→GEO优化策略 | 📝📊 | app-user-mcp |
+| 69 | 白皮书方案构建器 (Whitepaper Solution Builder) | 白皮书结构搭建→案例页生成→可信KPI措辞→图表语义校验→排版质检→PDF单页替换 | 📝 | - |
 
-**协作链路**：`23 市场调研 → 21 内容生成 → 24 SEO优化 → 60 AI搜索诊断 → 22 内容日历 → 25 ROI分析`
+**协作链路**：`23 市场调研 → 21 内容生成 → 24 SEO优化 → 60 AI搜索诊断 → 22 内容日历 → 25 ROI分析 → 69 白皮书构建`
 
 ---
 
@@ -314,7 +315,7 @@ skills/
 ├── 02-Finance/             # 财务管理（7 Skills）
 ├── 03-Operations/          # 运营管理（9 Skills）
 ├── 04-Sales/               # 销售管理（7 Skills）
-├── 05-Marketing/           # 市场营销（6 Skills）
+├── 05-Marketing/           # 市场营销（7 Skills）
 ├── 06-Engineering/         # 技术研发（5 Skills）
 ├── 07-Product/             # 产品管理（5 Skills）
 ├── 08-Legal/               # 法务合规（5 Skills）
